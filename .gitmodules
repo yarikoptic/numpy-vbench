@@ -1,3 +1,6 @@
 [submodule "vbench"]
 	path = vbench
 	url = http://github.com/pydata/vbench
+[submodule "numpy"]
+	path = numpy
+	url = git://github.com/numpy/numpy
