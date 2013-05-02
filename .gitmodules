@@ -1,0 +1,3 @@
+[submodule "vbench"]
+	path = vbench
+	url = http://github.com/pydata/vbench
