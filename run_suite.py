@@ -1,4 +1,15 @@
 #!/usr/bin/env python
+import os, sys
+
+try:
+    import numpy
+except ImportError:
+    # yoh: In a clean chroot I use I disabled system-wide numpy altogether
+    # as a paranoid measure to assure that benchmark scripts do not use it
+    # anyhow.  Since they would not inherit this sys.path, I am pointing
+    # to local numpy build, since it is needed for proper
+    # collection/processing of benchmarks
+    sys.path.insert(1, os.path.join(os.getcwd(), "numpy"))
 
 from vbench.api import BenchmarkRunner
 from suite import *
