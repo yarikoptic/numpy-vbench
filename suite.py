@@ -34,6 +34,18 @@ for modname in modules:
 for bm in benchmarks:
     assert(bm.name is not None)
 
+# Verify that they are all unique according to their checksums
+checksums = [b.checksum for b in benchmarks]
+if not (len(checksums) == len(set(checksums))):
+    # Houston we have a problem
+    checksums_ = set()
+    for b in benchmarks:
+        if b.checksum in checksums_:
+            print "Benchmark %s already known" % b
+        else:
+            checksums_.add(b.checksum)
+    raise ValueError("There were duplicate benchmarks -- check if you didn't leak variables")
+
 log.debug("Initializing settings")
 import getpass
 import sys

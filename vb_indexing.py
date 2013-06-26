@@ -8,8 +8,6 @@ from numpy_vb_common import TYPES1
 common_setup = """\
 from numpy_vb_common import *
 """
-#----------------------------------------------------------------------
-# mappers
 setup = common_setup
 
 vb_indexing = []
@@ -29,5 +27,6 @@ for l in ['indexes', 'indexes_rand']:
                               name='%s_%s' % (name, t)))
 
 _vb_names = [x.name for x in vb_indexing_separate]
+del x                                         # so it doesn't leak
 assert(len(_vb_names) == len(set(_vb_names)))   # all are unique
 #print '\n'.join(_vb_names)
