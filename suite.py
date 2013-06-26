@@ -8,7 +8,7 @@ log = logging.getLogger('vb')
 log.setLevel(logging.DEBUG)
 log.addHandler(logging.StreamHandler(sys.stdout))
 
-modules = ['vb_reduce', 'vb_io']
+modules = ['vb_indexing', 'vb_io', 'vb_random', 'vb_reduce', 'vb_ufunc']
 
 log.debug("Loading benchmark modules")
 by_module = {}
@@ -75,7 +75,7 @@ dependencies = ['numpy_vb_common.py']
 # for now -- arbitrary day in the memorable past when NumPy existed
 # already
 START_DATE = datetime(2011, 01, 01)
-#START_DATE = datetime(2012, 04, 1)
+#START_DATE = datetime(2012, 06, 20)
 
 # Might not even be there and I do not see it used
 # repo = GitRepo(REPO_PATH)
@@ -132,9 +132,10 @@ Performance Benchmarks
 These historical benchmark graphs were produced with `vbench
 <http://github.com/pydata/vbench>`__.
 
-The ``numpy_vb_common`` setup script can be found here_
+The ``numpy_vb_common`` setup script defining various variables and data
+structures used through-out the bench can be found here_
 
-.. _here: https://github.com/XXX
+.. _here: https://github.com/yarikoptic/numpy-vbench/blob/master/numpy_vb_common.py
 
 Produced on a machine with
 
