@@ -8,7 +8,8 @@ log = logging.getLogger('vb')
 log.setLevel(logging.DEBUG)
 log.addHandler(logging.StreamHandler(sys.stdout))
 
-modules = ['vb_indexing', 'vb_io', 'vb_random', 'vb_reduce', 'vb_ufunc']
+modules = ['vb_indexing', 'vb_io', 'vb_random', 'vb_reduce', 'vb_ufunc',
+           'vb_linalg']
 
 log.debug("Loading benchmark modules")
 by_module = {}

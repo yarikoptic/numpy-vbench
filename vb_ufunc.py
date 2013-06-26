@@ -17,7 +17,7 @@ vb_ufunc_separate = []
 
 for ufunc in ufuncs:
     f = getattr(numpy, ufunc)
-    cmd = '%s(%s)' % (ufunc, ','.join(['a']*f.nin))
+    cmd = 'numpy.%s(%s)' % (ufunc, ','.join(['a']*f.nin))
 
     vb_ufunc.append(
         Benchmark('[%s for a in squares.itervalues()]' % (cmd,),
