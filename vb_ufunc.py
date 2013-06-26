@@ -20,13 +20,13 @@ for ufunc in ufuncs:
     cmd = 'numpy.%s(%s)' % (ufunc, ','.join(['a']*f.nin))
 
     vb_ufunc.append(
-        Benchmark('[%s for a in squares.itervalues()]' % (cmd,),
+        Benchmark('[%s for a in squares_.itervalues()]' % (cmd,),
             common_setup, name=cmd))
 
     for t in TYPES1:
         vb_ufunc_separate.append(
             Benchmark(cmd,
-                      common_setup + "\na = squares[%r]" % t,
+                      common_setup + "\na = squares_[%r]" % t,
                       name='%s_%s' % (cmd, t)))
 
 #Print [x.name for x in vb_random], vb_random_shuffle100000.name

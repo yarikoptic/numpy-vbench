@@ -3,7 +3,7 @@
 from vbench.benchmark import Benchmark
 from datetime import datetime
 
-from numpy_vb_common import squares, numpy
+from numpy_vb_common import squares_, numpy
 
 common_setup = """\
 from numpy_vb_common import *
@@ -13,11 +13,11 @@ setup = common_setup
 vb_linalg = []
 # SVDs
 cmd = 'numpy.linalg.svd(a)'
-for t in squares:
+for t in squares_:
     # check that dtype is supported at all
     try:
-        _ = numpy.linalg.svd(squares[t][:2, :2])
+        _ = numpy.linalg.svd(squares_[t][:2, :2])
     except TypeError:
         continue
-    vb_linalg.append(Benchmark(cmd, setup + "a=squares[%r]" % t,
+    vb_linalg.append(Benchmark(cmd, setup + "a=squares_[%r]" % t,
                                name="%s_%s" % (cmd, t)))

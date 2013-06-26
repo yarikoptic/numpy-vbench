@@ -26,7 +26,7 @@ def extract_benchmarks(obj):
         return []
 
 for modname in modules:
-    log.debug("Loading %s" % modname)
+    log.debug(" Loading %s" % modname)
     ref = __import__(modname)
     by_module[modname] = list(chain(
         *[extract_benchmarks(x) for x in ref.__dict__.values()]))
@@ -42,7 +42,7 @@ if not (len(checksums) == len(set(checksums))):
     checksums_ = set()
     for b in benchmarks:
         if b.checksum in checksums_:
-            print "Benchmark %s already known" % b
+            log.error(" Benchmark %s already known" % b)
         else:
             checksums_.add(b.checksum)
     raise ValueError("There were duplicate benchmarks -- check if you didn't leak variables")
