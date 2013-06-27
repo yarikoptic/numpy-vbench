@@ -12,7 +12,7 @@ numpy.random.seed(1)
 nx, ny = 1000, 1000
 # reduced squares based on indexes_rand, primarily for testing more
 # time-consuming functions (ufunc, linalg, etc)
-nx_, ny_ = 100, 100
+nxs, nys = 100, 100
 
 # a set of interesting types to test
 TYPES1 = [
@@ -38,7 +38,7 @@ for t, v in squares.iteritems():
         v += v.T*1j
 
 # smaller squares
-squares_ = {t: s[:nx_, :ny_] for t, s  in squares.iteritems()}
+squares_ = {t: s[:nxs, :nys] for t, s  in squares.iteritems()}
 # vectors
 vectors = {t: s[0] for t, s  in squares.iteritems()}
 
