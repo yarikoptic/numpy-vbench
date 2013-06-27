@@ -5,7 +5,7 @@ import numpy
 from vbench.benchmark import Benchmark
 from datetime import datetime
 
-from numpy_vb_common import TYPES1
+from numpy_vb_common import TYPES1, squares_
 
 common_setup = """\
 from numpy_vb_common import *
@@ -19,11 +19,20 @@ for ufunc in ufuncs:
     f = getattr(numpy, ufunc)
     cmd = 'numpy.%s(%s)' % (ufunc, ','.join(['a']*f.nin))
 
-    vb_ufunc.append(
-        Benchmark('[%s for a in squares_.itervalues()]' % (cmd,),
-            common_setup, name=cmd))
+    # figure out compatible types
+    safe_types = []
+    for t,a in squares_.iteritems():
+        try:
+            eval(cmd, dict(numpy=numpy, a=a))
+            safe_types.append(t)
+        except TypeError:
+            pass
 
-    for t in TYPES1:
+    vb_ufunc.append(
+        Benchmark('[%s for t, a in squares_.iteritems() if t in types]' % (cmd,),
+            common_setup + "types=%r" % safe_types, name=cmd + "_%dtypes" % len(safe_types)))
+
+    for t in safe_types:
         vb_ufunc_separate.append(
             Benchmark(cmd,
                       common_setup + "\na = squares_[%r]" % t,
