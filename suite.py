@@ -6,12 +6,15 @@ import os, sys
 
 log = logging.getLogger('vb')
 log.setLevel(logging.DEBUG)
-log.addHandler(logging.StreamHandler(sys.stdout))
+#log.addHandler(logging.StreamHandler(sys.stdout))
 
-modules = ['vb_indexing', 'vb_io', 'vb_random', 'vb_reduce', 'vb_ufunc',
-           'vb_linalg']
+modules = ['vb_io',
+           'vb_indexing',
+           'vb_random', 'vb_reduce', 'vb_ufunc',
+           'vb_linalg'
+           ]
 
-log.debug("Loading benchmark modules")
+log.info("Loading benchmark modules")
 by_module = {}
 benchmarks = []
 
@@ -47,7 +50,7 @@ if not (len(checksums) == len(set(checksums))):
             checksums_.add(b.checksum)
     raise ValueError("There were duplicate benchmarks -- check if you didn't leak variables")
 
-log.debug("Initializing settings")
+log.info("Initializing settings")
 import getpass
 import sys
 
@@ -67,6 +70,7 @@ except:
     cur_dir = os.path.dirname(__file__)
     REPO_PATH = os.path.join(cur_dir, 'numpy')
     REPO_URL = 'git://github.com/numpy/numpy.git'
+    #REPO_URL = '/home/yoh/proj/pymvpa/numpy-vbench/numpy'
     DB_PATH = os.path.join(cur_dir, 'db/benchmarks.db')
     TMP_DIR = os.path.join(cur_dir, 'tmp')
     # Assure corresponding directories existence
@@ -75,8 +79,9 @@ except:
             os.makedirs(s)
 
 
+# : python setup.py clea
 PREPARE = """
-python setup.py clean
+git clean -dfx
 """
 
 BUILD = """
@@ -172,3 +177,4 @@ Produced on a machine with
                     print >> mh, bmk.name
                     print >> mh, '-' * len(bmk.name)
                     print >> mh, '.. include:: vbench/%s.txt\n' % bmk.name
+
