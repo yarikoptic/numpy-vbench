@@ -12,7 +12,7 @@ except ImportError:
     sys.path.insert(1, os.path.join(os.getcwd(), "numpy"))
 
 from vbench.api import BenchmarkRunner
-from vbench.utils import is_interactive
+from vbench.config import is_interactive
 
 from suite import *
 
