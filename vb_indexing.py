@@ -26,6 +26,20 @@ for l in ['indexes', 'indexes_rand']:
                     Benchmark(act, setup + "\na = squares[%r]" % t,
                               name='%s_%s' % (name, t)))
 
+setup = """\
+import tempfile
+from numpy import memmap, float32
+fp = memmap(tempfile.NamedTemporaryFile(), dtype=float32, mode='w+', shape=(50,60))"""
+act = """\
+for i in range(1000):
+     fp[5:10]
+"""
+clean = "del fp"
+
+vb_indexing_separate.append(
+    Benchmark(act, setup,
+              name='mmap_slicing', cleanup=clean))
+
 _vb_names = [x.name for x in vb_indexing_separate]
 del x                                         # so it doesn't leak
 assert(len(_vb_names) == len(set(_vb_names)))   # all are unique
