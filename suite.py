@@ -55,12 +55,12 @@ structures used through-out the bench can be found here_
 
 .. _here: https://github.com/yarikoptic/numpy-vbench/blob/master/numpy_vb_common.py
 
-Produced on a machine with
+Collect on a following machine:
 
-  - XXX (use lego)
-  - AMD XXX
-  - Debian wheezy
-  - Python 2.7.2 64-bit
+  - Dual AMD Opteron(tm) Processor 246, 3GB RAM
+  - Debian wheezy, amd-64 build (chroot on Debian with 3.2.0-4-amd64 kernel)
+  - Python 2.7.3 64-bit
+
 """
 dependencies = ['numpy_vb_common.py']
 
