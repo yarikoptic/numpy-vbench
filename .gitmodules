@@ -1,6 +1,6 @@
 [submodule "vbench"]
 	path = vbench
-	url = http://github.com/pydata/vbench
+	url = http://github.com/yarikoptic/vbench
 [submodule "numpy"]
 	path = numpy
 	url = git://github.com/numpy/numpy
