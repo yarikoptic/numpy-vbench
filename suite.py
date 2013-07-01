@@ -1,60 +1,22 @@
-from vbench.api import Benchmark, GitRepo
 from datetime import datetime
-from itertools import chain
 import logging
 import os, sys
+
+from vbench.api import collect_benchmarks
 
 log = logging.getLogger('vb')
 log.setLevel(logging.DEBUG)
 #log.addHandler(logging.StreamHandler(sys.stdout))
 
-modules = ['vb_io',
-           'vb_indexing',
-           'vb_random', 'vb_reduce', 'vb_ufunc',
-           'vb_linalg'
-           ]
-
-log.info("Loading benchmark modules")
-by_module = {}
-benchmarks = []
-
-def extract_benchmarks(obj):
-    if isinstance(obj, Benchmark):
-        return [obj]
-    elif isinstance(obj, list) or isinstance(obj, tuple):
-        return [x for x in obj if isinstance(x, Benchmark)]
-        ## no recursion for now
-        #list(chain(*[extract_benchmarks(x) for x in obj]))
-    else:
-        return []
-
-for modname in modules:
-    log.debug(" Loading %s" % modname)
-    ref = __import__(modname)
-    by_module[modname] = list(chain(
-        *[extract_benchmarks(x) for x in ref.__dict__.values()]))
-    benchmarks.extend(by_module[modname])
-
-for bm in benchmarks:
-    assert(bm.name is not None)
-
-# Verify that they are all unique according to their checksums
-checksums = [b.checksum for b in benchmarks]
-if not (len(checksums) == len(set(checksums))):
-    # Houston we have a problem
-    checksums_ = set()
-    for b in benchmarks:
-        if b.checksum in checksums_:
-            log.error(" Benchmark %s already known" % b)
-        else:
-            checksums_.add(b.checksum)
-    raise ValueError("There were duplicate benchmarks -- check if you didn't leak variables")
+benchmarks = collect_benchmarks(
+    ['vb_io',
+     'vb_indexing',
+     'vb_random', 'vb_reduce', 'vb_ufunc',
+     'vb_linalg'
+    ])
 
 log.info("Initializing settings")
-import getpass
 import sys
-
-USERNAME = getpass.getuser()
 
 try:
     import ConfigParser
@@ -78,7 +40,6 @@ except:
         if not os.path.exists(s):
             os.makedirs(s)
 
-
 # : python setup.py clea
 PREPARE = """
 git clean -dfx
@@ -88,68 +49,7 @@ BUILD = """
 python setup.py build_ext --inplace
 """
 
-dependencies = ['numpy_vb_common.py']
-
-# for now -- arbitrary day in the memorable past when NumPy existed
-# already
-START_DATE = datetime(2011, 01, 01)
-#START_DATE = datetime(2012, 06, 20)
-
-# Might not even be there and I do not see it used
-# repo = GitRepo(REPO_PATH)
-
-RST_BASE = 'source'
-
-# HACK!
-
-#timespan = [datetime(2011, 1, 1), datetime(2012, 1, 1)]
-
-def generate_rst_files(benchmarks):
-    import matplotlib as mpl
-    mpl.use('Agg')
-    import matplotlib.pyplot as plt
-
-    vb_path = os.path.join(RST_BASE, 'vbench')
-    fig_base_path = os.path.join(vb_path, 'figures')
-
-    if not os.path.exists(vb_path):
-        print 'creating %s' % vb_path
-        os.makedirs(vb_path)
-
-    if not os.path.exists(fig_base_path):
-        print 'creating %s' % fig_base_path
-        os.makedirs(fig_base_path)
-
-    for bmk in benchmarks:
-        print 'Generating rst file for %s' % bmk.name
-        rst_path = os.path.join(RST_BASE, 'vbench/%s.txt' % bmk.name)
-
-        fig_full_path = os.path.join(fig_base_path, '%s.png' % bmk.name)
-
-        # make the figure
-        plt.figure(figsize=(10, 6))
-        ax = plt.gca()
-        bmk.plot(DB_PATH, ax=ax)
-
-        start, end = ax.get_xlim()
-
-        plt.xlim([start - 30, end + 30])
-        plt.savefig(fig_full_path, bbox_inches='tight')
-        plt.close('all')
-
-        fig_rel_path = 'vbench/figures/%s.png' % bmk.name
-        rst_text = bmk.to_rst(image_path=fig_rel_path)
-        with open(rst_path, 'w') as f:
-            f.write(rst_text)
-
-    with open(os.path.join(RST_BASE, 'index.rst'), 'w') as f:
-        print >> f, """
-Performance Benchmarks
-======================
-
-These historical benchmark graphs were produced with `vbench
-<http://github.com/pydata/vbench>`__.
-
+DESCRIPTION = """
 The ``numpy_vb_common`` setup script defining various variables and data
 structures used through-out the bench can be found here_
 
@@ -161,20 +61,15 @@ Produced on a machine with
   - AMD XXX
   - Debian wheezy
   - Python 2.7.2 64-bit
-
-.. toctree::
-    :hidden:
-    :maxdepth: 3
 """
-        for modname, mod_bmks in sorted(by_module.items()):
-            print >> f, '    vb_%s' % modname
-            modpath = os.path.join(RST_BASE, 'vb_%s.rst' % modname)
-            with open(modpath, 'w') as mh:
-                header = '%s\n%s\n\n' % (modname, '=' * len(modname))
-                print >> mh, header
+dependencies = ['numpy_vb_common.py']
 
-                for bmk in mod_bmks:
-                    print >> mh, bmk.name
-                    print >> mh, '-' * len(bmk.name)
-                    print >> mh, '.. include:: vbench/%s.txt\n' % bmk.name
+# for now -- arbitrary day in the memorable past when NumPy existed
+# already
+START_DATE = datetime(2011, 01, 01)
+#START_DATE = datetime(2012, 06, 20)
 
+# Might not even be there and I do not see it used
+# repo = GitRepo(REPO_PATH)
+
+RST_BASE = 'source'
