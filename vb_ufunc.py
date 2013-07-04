@@ -43,6 +43,8 @@ for ufunc in ufuncs:
 #Print [x.name for x in vb_random], vb_random_shuffle100000.name
 
 # some interesting selective tests
+Benchmark('np.nonzero(d)', 'd = np.ones(1000, dtype=np.bool)',
+          name='numpy.nonzero')
 Benchmark('~d', 'd = np.ones(1000, dtype=np.bool)', name='numpy.not_bool')
 Benchmark('d & d', 'd = np.ones(1000, dtype=np.bool)', name='numpy.and_bool')
 Benchmark('d | d', 'd = np.ones(1000, dtype=np.bool)', name='numpy.or_bool')
