@@ -25,3 +25,12 @@ for a in [0, 1]:
             Benchmark('numpy.add.reduce(a, axis=%d)' % a,
                       setup + "\na = squares[%r]" % t,
                       name='%s_%s' % (name, t)))
+
+vb_any_slow = Benchmark('d.any()', 'd = np.zeros(100000, np.bool)',
+                        name='numpy.any_slow')
+vb_any_fast = Benchmark('d.any()', 'd = np.ones(100000, np.bool)',
+                        name='numpy.any_fast')
+vb_all_slow = Benchmark('d.all()', 'd = np.ones(100000, np.bool)',
+                        name='numpy.all_slow')
+vb_all_fast = Benchmark('d.all()', 'd = np.zeros(100000, np.bool)',
+                        name='numpy.all_fast')
