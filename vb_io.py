@@ -22,7 +22,7 @@ for type in ("int8", "int16", "float32", "float64",
     d = np.arange(50*500, dtype=%s).reshape((500,50))
     e = np.arange(50*500, dtype=%s).reshape((50,500))
     dflat = np.arange(50*500, dtype=%s)
-    """ % type
+    """ % (type, type, type)
     vb_copy.append(Benchmark('d[...] = e', setup),
                    name='memcpy_' + type)
     vb_copy.append(Benchmark('d[...] = 1', setup),
