@@ -23,11 +23,11 @@ for type in ("int8", "int16", "float32", "float64",
     e = np.arange(50*500, dtype=%s).reshape((50,500))
     dflat = np.arange(50*500, dtype=%s)
     """ % (type, type, type)
-    vb_copy.append(Benchmark('d[...] = e', setup),
-                   name='memcpy_' + type)
-    vb_copy.append(Benchmark('d[...] = 1', setup),
-                   name='cont_assign_' + type)
-    vb_copy.append(Benchmark('d[...] = e.T', setup),
-                   name='strided_copy_' + type)
-    vb_copy.append(Benchmark('dflat[::2] = 2', setup),
-                   name='strided_assign_' + type)
+    vb_copy.append(Benchmark('d[...] = e', setup,
+                             name='memcpy_' + type))
+    vb_copy.append(Benchmark('d[...] = 1', setup,
+                             name='cont_assign_' + type))
+    vb_copy.append(Benchmark('d[...] = e.T', setup,
+                             name='strided_copy_' + type))
+    vb_copy.append(Benchmark('dflat[::2] = 2', setup,
+                             name='strided_assign_' + type))
