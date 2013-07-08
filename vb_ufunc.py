@@ -41,3 +41,17 @@ for ufunc in ufuncs:
                       name='%s_%s' % (cmd, t)))
     """
 #Print [x.name for x in vb_random], vb_random_shuffle100000.name
+
+# some interesting selective tests
+Benchmark('np.nonzero(d)', 'd = np.ones(1000, dtype=np.bool)',
+          name='numpy.nonzero')
+Benchmark('~d', 'd = np.ones(1000, dtype=np.bool)', name='numpy.not_bool')
+Benchmark('d & d', 'd = np.ones(1000, dtype=np.bool)', name='numpy.and_bool')
+Benchmark('d | d', 'd = np.ones(1000, dtype=np.bool)', name='numpy.or_bool')
+for type in ('float32', 'float64'):
+    Benchmark('np.add(d, 1)', 'd = np.ones(1000, dtype=%s)' % type,
+              name='numpy.add_scalar2_' + type)
+    Benchmark('np.divide(d, 1)', 'd = np.ones(1000, dtype=%s)' % type,
+              name='numpy.divide_scalar2_' + type)
+    Benchmark('d < 1', 'd = np.ones(1000, dtype=%s)' % type,
+              name='numpy.less_than_scalar2_' + type)
