@@ -31,7 +31,7 @@ def run_process():
 if __name__ == '__main__':
     import sys
     if 'verify' in sys.argv:
-        verify_benchmarks(benchmarks)
+        verify_benchmarks(benchmarks, raise_=True)
     else:
         try:
             run_process()
