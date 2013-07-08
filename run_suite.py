@@ -11,7 +11,7 @@ except ImportError:
     # collection/processing of benchmarks
     sys.path.insert(1, os.path.join(os.getcwd(), "numpy"))
 
-from vbench.api import BenchmarkRunner
+from vbench.api import BenchmarkRunner, verify_benchmarks
 from vbench.config import is_interactive
 
 from suite import *
@@ -26,16 +26,19 @@ def run_process():
                              start_date=START_DATE,
                              module_dependencies=dependencies,
                              verify=True)
-    #runner.verify_benchmarks()
     runner.run()
 
 if __name__ == '__main__':
-    try:
-        run_process()
-    except Exception as exc:
-        log.error('%s (%s)' % (str(exc), exc.__class__.__name__))
-        if __debug__ and is_interactive(): # and args.common_debug:
-            import pdb
-            pdb.post_mortem()
-        raise
+    import sys
+    if 'verify' in sys.argv:
+        verify_benchmarks(benchmarks)
+    else:
+        try:
+            run_process()
+        except Exception as exc:
+            log.error('%s (%s)' % (str(exc), exc.__class__.__name__))
+            if __debug__ and is_interactive(): # and args.common_debug:
+                import pdb
+                pdb.post_mortem()
+            raise
 
