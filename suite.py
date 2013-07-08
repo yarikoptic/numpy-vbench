@@ -66,7 +66,7 @@ dependencies = ['numpy_vb_common.py']
 
 # for now -- arbitrary day in the memorable past when NumPy existed
 # already
-START_DATE = datetime(2011, 01, 01)
+START_DATE = datetime(2011, 03, 01)
 #START_DATE = datetime(2012, 06, 20)
 
 # Might not even be there and I do not see it used
