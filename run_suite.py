@@ -24,7 +24,9 @@ def run_process():
                              clean_cmd=PREPARE,
                              run_option='eod', run_order='multires',
                              start_date=START_DATE,
-                             module_dependencies=dependencies)
+                             module_dependencies=dependencies,
+                             verify=True)
+    #runner.verify_benchmarks()
     runner.run()
 
 if __name__ == '__main__':
