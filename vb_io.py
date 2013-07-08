@@ -8,22 +8,23 @@ from tempfile import TemporaryFile
 """
 #----------------------------------------------------------------------
 # mappers
-setup = common_setup + """\
+setup_tempfile = common_setup + """\
 outfile = TemporaryFile()
 """
 cleanup = "outfile.close()"
 
-vb_savez_squares = Benchmark('numpy.savez(outfile, squares)', setup, cleanup=cleanup)
+vb_savez_squares = Benchmark('numpy.savez(outfile, squares)', setup_tempfile, cleanup=cleanup)
 
 vb_copy = []
 for type in ("int8", "int16", "float32", "float64",
              "complex64", "complex128"):
-    setup = """\
-    d = np.arange(50*500, dtype=%s).reshape((500,50))
-    e = np.arange(50*500, dtype=%s).reshape((50,500))
-    dflat = np.arange(50*500, dtype=%s)
-    """ % (type, type, type)
-    vb_copy.append(Benchmark('d[...] = e', setup,
+    setup = common_setup + """
+d = numpy.arange(50*500, dtype=numpy.%s).reshape((500,50))
+e = numpy.arange(50*500, dtype=numpy.%s).reshape((50,500))
+e_d = e.reshape(d.shape)
+dflat = numpy.arange(50*500, dtype=numpy.%s)
+""" % (type, type, type)
+    vb_copy.append(Benchmark('d[...] = e_d', setup,
                              name='memcpy_' + type))
     vb_copy.append(Benchmark('d[...] = 1', setup,
                              name='cont_assign_' + type))
