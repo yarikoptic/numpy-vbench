@@ -14,6 +14,7 @@ benchmarks = collect_benchmarks(
      'vb_random', 'vb_reduce', 'vb_ufunc',
      'vb_linalg',
      'vb_app',
+     'vb_function_base',
     ])
 
 log.info("Initializing settings")
