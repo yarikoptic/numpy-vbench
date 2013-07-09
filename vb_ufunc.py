@@ -64,6 +64,18 @@ for type in ('numpy.float32', 'numpy.float64'):
         Benchmark('numpy.divide(d, 1)',
                   common_setup + 'd = numpy.ones(1000, dtype=%s)' % type,
                   name='numpy.divide_scalar2_' + type),
+        Benchmark('numpy.divide(d, 1, out=d)',
+                  common_setup + 'd = numpy.ones(1000, dtype=%s)' % type,
+                  name='numpy.divide_scalar2_inplace_' + type),
         Benchmark('d < 1',
                   common_setup + 'd = numpy.ones(1000, dtype=%s)' % type,
                   name='numpy.less_than_scalar2_' + type)]
+
+vb_ufunc_scalar = [
+    Benchmark('x+x',
+              common_setup + 'x = numpy.asarray(1.0)',
+              name='numpy.add_scalar'),
+    Benchmark('x+1.',
+              common_setup + 'x = numpy.asarray(1.0)',
+              name='numpy.add_scalar_conv')
+    ]
