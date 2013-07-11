@@ -19,7 +19,7 @@ TYPES1 = [
         'int16', 'float16',
         'int32', 'float32',
         'int64', 'float64',  'complex64',
-                 'float128', 'complex128',
+                 'longfloat', 'complex128',
                              'complex256',
         ]
 
