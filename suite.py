@@ -11,7 +11,9 @@ log.setLevel(logging.DEBUG)
 benchmarks = collect_benchmarks(
     ['vb_io',
      'vb_indexing',
-     'vb_random', 'vb_reduce', 'vb_ufunc',
+     'vb_random',
+     'vb_reduce',
+     'vb_ufunc',
      'vb_linalg',
      'vb_app',
      'vb_function_base',
@@ -34,6 +36,7 @@ except:
     cur_dir = os.path.dirname(__file__)
     REPO_PATH = os.path.join(cur_dir, 'numpy')
     REPO_URL = 'git://github.com/numpy/numpy.git'
+    REPO_BROWSE = 'https://github.com/numpy/numpy'
     #REPO_URL = '/home/yoh/proj/pymvpa/numpy-vbench/numpy'
     DB_PATH = os.path.join(cur_dir, 'db/benchmarks.db')
     TMP_DIR = os.path.join(cur_dir, 'tmp')
