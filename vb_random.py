@@ -13,8 +13,8 @@ setup = common_setup
 vb_random = []
 # Simple generators
 for f in (('normal', ''), ('uniform', ''), ('weibull', "1, "),
-          ('binomial', "10, 0.5, "), ('poisson', "10, ")):
-    cmd = 'numpy.random.%s(%ssize=(nxs, nys))' % f
+          ('binomial', "10,0.5, "), ('poisson', "10,")):
+    cmd = 'numpy.random.%s(%ssize=(nxs,nys))' % f
     vb_random.append(Benchmark(cmd, setup, name=cmd))
 
 # shuffle
