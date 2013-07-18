@@ -12,7 +12,7 @@ setup = common_setup
 
 vb_linalg = []
 
-for op in ('svd', 'inv', 'det', 'norm'):
+for op in ('svd', 'pinv', 'det', 'norm'):
     cmd = 'numpy.linalg.%s(a)' % op
     func = getattr(numpy.linalg, op)
     for t in squares_:
