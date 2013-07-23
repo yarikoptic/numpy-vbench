@@ -9,7 +9,8 @@ log.setLevel(logging.DEBUG)
 #log.addHandler(logging.StreamHandler(sys.stdout))
 
 benchmarks = collect_benchmarks(
-    ['vb_io',
+    ['vb_core',
+     'vb_io',
      'vb_indexing',
      'vb_random',
      'vb_reduce',
