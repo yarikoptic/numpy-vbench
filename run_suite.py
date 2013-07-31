@@ -21,8 +21,9 @@ log = logging.getLogger('vb')
 def run_process():
     runner = BenchmarkRunner(benchmarks, REPO_PATH, REPO_URL,
                              BUILD, DB_PATH, TMP_DIR, PREPARE,
+                             branches=BRANCHES,
                              clean_cmd=PREPARE,
-                             run_option='eod', run_order='multires',
+                             run_option='all', run_order='multires',
                              start_date=START_DATE,
                              module_dependencies=dependencies,
                              verify=True)
