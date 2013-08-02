@@ -36,3 +36,30 @@ for op in ('svd', 'pinv', 'det', 'norm'):
 vb_linalg.append(Benchmark('numpy.linalg.lstsq(a, b)',
                            setup + "a=squares_['float64']; b=indexes_rand[:100].astype(numpy.float64)",
                            name="numpy.linalg.lstsq(a, b)_float64"))
+
+# and basic testing of .dot and .einsum
+setup = """\
+import numpy
+a = numpy.arange(60000.).reshape(150, 400)
+b = numpy.arange(24000.).reshape(400, 60)
+c = numpy.arange(60)
+d = numpy.arange(400)
+"""
+
+eindot_benchmarks = [
+    Benchmark(cmd, setup, name=cmd)
+    for cmd in ("numpy.einsum('ij,jk', a, b)",
+                "numpy.sum(numpy.dot(a, b))",
+                "numpy.einsum('i,ij,j', d, b, c)",
+                "numpy.dot(d, numpy.dot(b, c))")]
+
+setup = """\
+import numpy
+a = numpy.arange(4800.).reshape(6, 8, 100)
+b = numpy.arange(1920.).reshape(8, 6, 40)
+"""
+
+tensordor_benchmarks = [
+    Benchmark(cmd, setup, name=cmd)
+    for cmd in ("numpy.einsum('ijk,jil->kl', a, b)",
+                "numpy.tensordot(a, b, axes=([1,0], [0,1]))")]
