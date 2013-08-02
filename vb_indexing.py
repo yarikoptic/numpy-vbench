@@ -28,17 +28,26 @@ for l in ['indexes', 'indexes_rand']:
 
 setup = """\
 import tempfile
-from numpy import memmap, float32
+from numpy import memmap, float32, array
 fp = memmap(tempfile.NamedTemporaryFile(), dtype=float32, mode='w+', shape=(50,60))"""
-act = """\
+
+act_slicing = """\
 for i in range(1000):
      fp[5:10]
 """
+
+act_indexing = """\
+for i in range(1000):
+     fp[indexes]
+"""
 clean = "del fp"
 
-vb_indexing_separate.append(
-    Benchmark(act, setup,
-              name='mmap_slicing', cleanup=clean))
+vb_indexing_separate += [
+    Benchmark(act_slicing, setup,
+              name='mmap_slicing', cleanup=clean),
+    Benchmark(act_indexing, setup + "\nindexes = array([3,4,6,10,20])",
+              name='mmap_fancy_indexing', cleanup=clean),
+    ]
 
 _vb_names = [x.name for x in vb_indexing_separate]
 del x                                         # so it doesn't leak
