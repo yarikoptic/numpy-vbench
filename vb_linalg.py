@@ -49,7 +49,7 @@ d = numpy.arange(400)
 eindot_benchmarks = [
     Benchmark(cmd, setup, name=cmd)
     for cmd in ("numpy.einsum('ij,jk', a, b)",
-                "numpy.sum(numpy.dot(a, b))",
+                "numpy.dot(a, b)",
                 "numpy.einsum('i,ij,j', d, b, c)",
                 "numpy.dot(d, numpy.dot(b, c))")]
 
