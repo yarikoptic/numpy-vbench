@@ -53,4 +53,6 @@ random.shuffle(indexes_rand)         # in-place shuffle
 # only now make them arrays
 indexes = numpy.array(indexes)
 indexes_rand = numpy.array(indexes_rand)
-
+# smaller versions
+indexes_ = indexes[indexes < nxs]
+indexes_rand_ = indexes_rand[indexes_rand < nxs]
