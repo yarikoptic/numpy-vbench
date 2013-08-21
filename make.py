@@ -47,6 +47,8 @@ def html():
     if os.system('sphinx-build -P -b html -d build/doctrees '
                  'source build/html'):
         raise SystemExit("Building HTML failed.")
+    if os.system('touch build/html/.nojekyll'):
+        raise SystemExit("Touching nojekyll file managed to fail.")
 
 def latex():
     check_build()
