@@ -29,7 +29,7 @@ for ufunc in ufuncs:
             pass
 
     vb_ufunc.append(
-        Benchmark('[%s for t, a in squares_.iteritems() if t in types]' % (cmd,),
+        Benchmark('[%s for t, a in squares.iteritems() if t in types]' % (cmd,),
             common_setup + "types=%r" % safe_types, name=cmd + "_%dtypes" % len(safe_types)))
 
     """
@@ -37,7 +37,7 @@ for ufunc in ufuncs:
     for t in safe_types:
         vb_ufunc_separate.append(
             Benchmark(cmd,
-                      common_setup + "\na = squares_[%r]" % t,
+                      common_setup + "\na = squares[%r]" % t,
                       name='%s_%s' % (cmd, t)))
     """
 #Print [x.name for x in vb_random], vb_random_shuffle100000.name
