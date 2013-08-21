@@ -41,8 +41,8 @@ vb_linalg.append(Benchmark('numpy.linalg.lstsq(a, b)',
 setup = """\
 import numpy
 a = numpy.arange(60000.).reshape(150, 400)
-b = numpy.arange(24000.).reshape(400, 60)
-c = numpy.arange(60)
+b = numpy.arange(240000.).reshape(400, 600)
+c = numpy.arange(600)
 d = numpy.arange(400)
 """
 
@@ -55,8 +55,8 @@ eindot_benchmarks = [
 
 setup = """\
 import numpy
-a = numpy.arange(4800.).reshape(6, 8, 100)
-b = numpy.arange(1920.).reshape(8, 6, 40)
+a = numpy.arange(480000.).reshape(60, 80, 100)
+b = numpy.arange(192000.).reshape(80, 60, 40)
 """
 
 tensordor_benchmarks = [
