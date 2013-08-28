@@ -3,10 +3,8 @@
 from vbench.benchmark import Benchmark
 from datetime import datetime
 
-from numpy_vb_common import TYPES1
-
 common_setup = """\
-from numpy_vb_common import *
+import numpy
 """
 setup = common_setup
 
@@ -14,7 +12,7 @@ vb_random = []
 # Simple generators
 for f in (('normal', ''), ('uniform', ''), ('weibull', "1, "),
           ('binomial', "10,0.5, "), ('poisson', "10,")):
-    cmd = 'numpy.random.%s(%ssize=(nxs,nys))' % f
+    cmd = 'numpy.random.%s(%ssize=(100,100))' % f
     vb_random.append(Benchmark(cmd, setup, name=cmd))
 
 # shuffle
