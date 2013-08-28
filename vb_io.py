@@ -3,7 +3,7 @@
 from vbench.benchmark import Benchmark
 
 common_setup = """\
-from numpy_vb_common import *
+import numpy
 from tempfile import TemporaryFile
 """
 #----------------------------------------------------------------------
@@ -13,7 +13,9 @@ outfile = TemporaryFile()
 """
 cleanup = "outfile.close()"
 
-vb_savez_squares = Benchmark('numpy.savez(outfile, squares)', setup_tempfile, cleanup=cleanup)
+vb_savez_squares = Benchmark('numpy.savez(outfile, squares)',
+                             "from numpy_vb_common import squares;\n" + setup_tempfile,
+                             cleanup=cleanup)
 
 vb_copy = []
 for type in ("int8", "int16", "float32", "float64",
