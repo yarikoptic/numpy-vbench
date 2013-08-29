@@ -46,7 +46,7 @@ except:
         if not os.path.exists(s):
             os.makedirs(s)
 
-BRANCHES = ['master', 'origin/maintenance/1.7.x', 'origin/maintenance/1.6.x']
+BRANCHES = ['master', 'origin/maintenance/1.8.x', 'origin/maintenance/1.7.x', 'origin/maintenance/1.6.x']
 
 # : python setup.py clea
 PREPARE = """
