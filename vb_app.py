@@ -38,3 +38,39 @@ vb_norm = Benchmark("laplace(N, Niter, func=num_update, args=(dx2, dy2))",
                     setup=laplace_setup, name="laplace_normal")
 vb_inpl = Benchmark("laplace(N, Niter, func=num_inplace, args=(dx2, dy2))",
                     setup=laplace_setup, name="laplace_inplace")
+
+maxes_of_dots_setup = """
+
+import numpy as np
+np.random.seed(1)
+
+nsubj = 5
+nfeat = 100
+ntime = 200
+
+arrays = [np.random.normal(size=(ntime, nfeat)) for i in xrange(nsubj)]
+
+def maxes_of_dots(arrays):
+    \"\"\"
+    A magical feature score for each feature in each dataset
+    :ref:`Haxby et al., Neuron (2011) <HGC+11>`.
+    If arrays are column-wise zscore-d before computation it
+    results in characterizing each column in each array with
+    sum of maximal correlations of that column with columns
+    in other arrays.
+
+    Arrays must agree only on the first dimension.
+
+    For numpy it a join benchmark of dot products and max()
+    on a set of arrays.
+    \"\"\"
+    feature_scores = [ 0 ] * len(arrays)
+    for i, sd in enumerate(arrays):
+        for j, sd2 in enumerate(arrays[i+1:]):
+            corr_temp = np.dot(sd.T, sd2)
+            feature_scores[i] += np.max(corr_temp, axis = 1)
+            feature_scores[j+i+1] += np.max(corr_temp, axis = 0)
+    return feature_scores
+"""
+
+vb_maxes_of_dots = Benchmark("maxes_of_dots(arrays)", setup=maxes_of_dots_setup, name="maxes_of_dots")
