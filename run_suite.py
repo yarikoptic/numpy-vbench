@@ -25,6 +25,7 @@ def run_process():
                              clean_cmd=PREPARE,
                              run_option='all', run_order='multires',
                              start_date=START_DATE,
+                             existing='min',
                              module_dependencies=dependencies,
                              verify=True)
     runner.run()
