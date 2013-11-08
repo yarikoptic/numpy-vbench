@@ -1,6 +1,7 @@
 [submodule "vbench"]
 	path = vbench
 	url = http://github.com/yarikoptic/vbench
+	branch = enh/branches-support
 [submodule "numpy"]
 	path = numpy
 	url = git://github.com/numpy/numpy
