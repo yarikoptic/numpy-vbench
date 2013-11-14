@@ -34,3 +34,15 @@ vb_all_slow = Benchmark('d.all()', setup + 'd = numpy.ones(100000, numpy.bool)',
                         name='numpy.all_slow')
 vb_all_fast = Benchmark('d.all()', setup + 'd = numpy.zeros(100000, numpy.bool)',
                         name='numpy.all_fast')
+vb_minmax = []
+for type in ('np.float32', 'np.float64', 'np.intp'):
+    vb_minmax.append(Benchmark('np.min(d)',
+                   common_setup + 'd = numpy.ones(20000, dtype=%s)' % type,
+                   name='min_' + type))
+    vb_minmax.append(Benchmark('np.max(d)',
+                   common_setup + 'd = numpy.ones(20000, dtype=%s)' % type,
+                   name='max_' + type))
+
+vb_small = Benchmark('numpy.sum(d)',
+                     common_setup + 'd = numpy.ones(100, dtype=numpy.float32)',
+                     name='numpy.small_reduction')

@@ -12,6 +12,10 @@ for b in [
     "numpy.array([])",
     "numpy.array([1])",
     ("numpy.array(l100)", "l100 = range(100);"),
+    ("numpy.array(l)", "l = [numpy.arange(1000), numpy.arange(1000)];"),
+    ("numpy.vstack(l)", "l = [numpy.arange(1000), numpy.arange(1000)];"),
+    ("numpy.hstack(l)", "l = [numpy.arange(1000), numpy.arange(1000)];"),
+    ("numpy.dstack(l)", "l = [numpy.arange(1000), numpy.arange(1000)];"),
     #
     "numpy.arange(100)",
     "numpy.zeros(100)",

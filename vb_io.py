@@ -34,3 +34,23 @@ dflat = numpy.arange(50*500, dtype=numpy.%s)
                              name='strided_copy_' + type))
     vb_copy.append(Benchmark('dflat[::2] = 2', setup,
                              name='strided_assign_' + type))
+
+setup = common_setup + """
+d = numpy.ones(50000)
+e = d.copy()
+m = d == 1
+im = ~m
+m8 = m.copy()
+m8[::8] = ~(m[::8])
+im8 = ~m8
+"""
+vb_copy.append(Benchmark('np.copyto(d, e)', setup,
+                         name='copyto'))
+vb_copy.append(Benchmark('np.copyto(d, e, where=m)', setup,
+                         name='copyto_sparse'))
+vb_copy.append(Benchmark('np.copyto(d, e, where=im)', setup,
+                         name='copyto_dense'))
+vb_copy.append(Benchmark('np.copyto(d, e, where=m8)', setup,
+                         name='copyto_8_sparse'))
+vb_copy.append(Benchmark('np.copyto(d, e, where=im8)', setup,
+                         name='copyto_8_dense'))

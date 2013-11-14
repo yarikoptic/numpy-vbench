@@ -46,7 +46,10 @@ for ufunc in ufuncs:
 vb_ufunc_custom = [
     Benchmark('numpy.nonzero(d)',
               common_setup + 'd = numpy.ones(20000, dtype=numpy.bool)',
-                name='numpy.nonzero'),
+              name='numpy.nonzero'),
+    Benchmark('numpy.count_nonzero(d)',
+              common_setup + 'd = numpy.ones(20000, dtype=numpy.bool)',
+              name='numpy.count_nonzero'),
     Benchmark('~d', common_setup + 'd = numpy.ones(20000, dtype=numpy.bool)',
               name='numpy.not_bool'),
     Benchmark('d & d',
@@ -77,5 +80,16 @@ vb_ufunc_scalar = [
               name='numpy.add_scalar'),
     Benchmark('x+1.',
               common_setup + 'x = numpy.asarray(1.0)',
-              name='numpy.add_scalar_conv')
+              name='numpy.add_scalar_conv'),
+    Benchmark('x+y',
+              common_setup + 'x = numpy.asarray(1.0+1j); y = complex(1., 1.)',
+              name='numpy.add_scalar_conv_complex'),
     ]
+
+vb_broadcast = Benchmark('d - e',
+                         common_setup + """\
+d = numpy.ones((50000, 100), dtype=numpy.float64)
+e = numpy.ones((100,), dtype=numpy.float64)
+""",
+                         name='numpy.broadcast')
+
