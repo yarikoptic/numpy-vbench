@@ -23,6 +23,8 @@ for b in [
     "numpy.empty(100)",
     "numpy.eye(100)",
     "numpy.identity(100)",
+    "numpy.eye(3000)",
+    "numpy.identity(3000)",
     ("numpy.diag(l100)", "l100 = range(100);"),
     ("numpy.diagflat(l100)", "l100 = range(100);"),
     ("numpy.diagflat([l50, l50])", "l50 = range(50);"),
@@ -41,3 +43,6 @@ for b in [
         setup_ = ""
     vb_constructors.append(
         Benchmark(bm, setup=setup+setup_, name=bm))
+
+# Benchmark includes numpy so we must reload
+vb_import = Benchmark("import numpy; reload(numpy)", setup="", name="import_numpy", ncalls=1, repeat=10)
