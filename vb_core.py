@@ -45,4 +45,12 @@ for b in [
         Benchmark(bm, setup=setup+setup_, name=bm))
 
 # Benchmark includes numpy so we must reload
-vb_import = Benchmark("import numpy; reload(numpy)", setup="", name="import_numpy", ncalls=1, repeat=10)
+reimport_setup = """
+import sys
+def unload_numpy():
+  unload = [x for x in sys.modules.keys() if x.startswith('numpy')]
+  for k in unload:
+   sys.modules.pop(k)
+"""
+
+vb_reimport_numpy = Benchmark("unload_numpy(); import numpy;", setup=reimport_setup, name="reimport_numpy")
