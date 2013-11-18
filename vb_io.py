@@ -44,13 +44,14 @@ m8 = m.copy()
 m8[::8] = ~(m[::8])
 im8 = ~m8
 """
+prereq_copyto = "assert(hasattr(np, 'copyto'))"
 vb_copy.append(Benchmark('np.copyto(d, e)', setup,
-                         name='copyto'))
+                         name='copyto', prereq=prereq_copyto))
 vb_copy.append(Benchmark('np.copyto(d, e, where=m)', setup,
-                         name='copyto_sparse'))
+                         name='copyto_sparse', prereq=prereq_copyto))
 vb_copy.append(Benchmark('np.copyto(d, e, where=im)', setup,
-                         name='copyto_dense'))
+                         name='copyto_dense', prereq=prereq_copyto))
 vb_copy.append(Benchmark('np.copyto(d, e, where=m8)', setup,
-                         name='copyto_8_sparse'))
+                         name='copyto_8_sparse', prereq=prereq_copyto))
 vb_copy.append(Benchmark('np.copyto(d, e, where=im8)', setup,
-                         name='copyto_8_dense'))
+                         name='copyto_8_dense', prereq=prereq_copyto))
