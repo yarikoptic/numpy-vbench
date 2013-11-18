@@ -44,13 +44,3 @@ for b in [
     vb_constructors.append(
         Benchmark(bm, setup=setup+setup_, name=bm))
 
-# Benchmark includes numpy so we must reload
-reimport_setup = """
-import sys
-def unload_numpy():
-  unload = [x for x in sys.modules.keys() if x.startswith('numpy')]
-  for k in unload:
-   sys.modules.pop(k)
-"""
-
-vb_reimport_numpy = Benchmark("unload_numpy(); import numpy;", setup=reimport_setup, name="reimport_numpy")
