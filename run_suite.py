@@ -18,12 +18,12 @@ from suite import *
 
 log = logging.getLogger('vb')
 
-def run_process(existing='min'):
+def run_process(existing='min', run_order='multires', run_limit=None):
     runner = BenchmarkRunner(benchmarks, REPO_PATH, REPO_URL,
                              BUILD, DB_PATH, TMP_DIR, PREPARE,
                              branches=BRANCHES,
                              clean_cmd=PREPARE,
-                             run_option='all', run_order='multires',
+                             run_option='all', run_order=run_order, run_limit=run_limit,
                              start_date=START_DATE,
                              existing=existing,
                              module_dependencies=dependencies,
@@ -38,9 +38,10 @@ if __name__ == '__main__':
         try:
             # quick pass through to get at least some results for only
             # new benchmarks and/or commits
-            run_process(existing='skip')
-            # now a thorough pass through trying to get better estimates for previous
-            run_process(existing='min')
+            run_process(existing='skip', run_order='multires')
+            # now a thorough pass through trying to get better
+            # estimates for some of previous without running all of them
+            run_process(existing='min', run_order='random', run_limit=100)
         except Exception as exc:
             log.error('%s (%s)' % (str(exc), exc.__class__.__name__))
             if __debug__ and is_interactive(): # and args.common_debug:
