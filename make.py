@@ -25,15 +25,24 @@ os.environ['PYTHONPATH'] = '..'
 
 SPHINX_BUILD = 'sphinxbuild'
 
+from suite import benchmarks, DB_PATH, RST_BASE, DESCRIPTION, REPO_PATH, REPO_BROWSE, BRANCHES
+
+def update():
+    # building could be needed for verify
+    os.system('cd %s; git pull --ff-only; python setup.py build_ext --inplace' % REPO_PATH)
+
 def upload():
     'push a copy to the site'
-    os.system('cd build/html; rsync -avz . pandas@pandas.pydata.org'
-              ':/usr/share/nginx/pandas/pandas-docs/vbench/ -essh')
-
-def uploadpdf():
-    'push a copy to the sf site'
-    os.system('cd build/latex; scp pandas.pdf wesmckinn,pandas@web.sf.net'
-              ':/home/groups/p/pa/pandas/htdocs/')
+    """
+    # Generated gh-pages are bulky, so why to carry them around?
+    # We still probably like to use them for 'free hosting' but regenerating upon every build from scratch and
+    # then gc and repacking archive
+    git branch -D gh-pages
+    git gc --aggressive
+    ghp-import -p build/html -n
+    git push -f origin gh-pages
+    """
+    os.system('git branch -D gh-pages && git gc --aggressive && ghp-import -p build/html -n && git push -f origin gh-pages')
 
 def clean():
     if os.path.exists('build'):
@@ -42,7 +51,6 @@ def clean():
 def generate_rsts():
     """Prepare build/source which acquires original RST_BASE with generated files placed in
     """
-    from suite import benchmarks, DB_PATH, RST_BASE, DESCRIPTION, REPO_BROWSE, BRANCHES
     from vbench.reports import generate_rst_files, generate_rst_analysis
 
     os.system('rsync -a %s build/' % RST_BASE)
@@ -105,13 +113,14 @@ def check_build():
 def all():
     clean()
     html()
+    upload()
 
 funcd = {
+    'update'   : update,
     'html'     : html,
     'latex'    : latex,
     'clean'    : clean,
-    'upload'       : upload,
-    'uploadpdf'    : uploadpdf,
+    'upload'   : upload,
     'all'      : all,
     }
 
