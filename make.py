@@ -39,13 +39,35 @@ def clean():
     if os.path.exists('build'):
         shutil.rmtree('build')
 
-    if os.path.exists('source/generated'):
-        shutil.rmtree('source/generated')
+def generate_rsts():
+    """Prepare build/source which acquires original RST_BASE with generated files placed in
+    """
+    from suite import benchmarks, DB_PATH, RST_BASE, DESCRIPTION, REPO_BROWSE, BRANCHES
+    from vbench.reports import generate_rst_files, generate_rst_analysis
+
+    os.system('rsync -a %s build/' % RST_BASE)
+    outpath = os.path.join('build', RST_BASE)
+    generate_rst_analysis(
+                   benchmarks,
+                   dbpath=DB_PATH,
+                   outpath=outpath,
+                   gh_repo=REPO_BROWSE)
+    generate_rst_files(benchmarks,
+                   dbpath=DB_PATH,
+                   outpath=outpath,
+                   branches=BRANCHES,
+                   description=DESCRIPTION + """
+
+.. include:: analysis.rst
+
+""")
+    return outpath
 
 def html():
     check_build()
+    outpath = generate_rsts()
     if os.system('sphinx-build -P -b html -d build/doctrees '
-                 'source build/html'):
+                 '%s build/html' % outpath):
         raise SystemExit("Building HTML failed.")
     if os.system('touch build/html/.nojekyll'):
         raise SystemExit("Touching nojekyll file managed to fail.")
@@ -81,7 +103,7 @@ def check_build():
             pass
 
 def all():
-    # clean()
+    clean()
     html()
 
 funcd = {
