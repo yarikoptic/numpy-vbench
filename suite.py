@@ -58,12 +58,18 @@ python setup.py build_ext --inplace
 """
 
 DESCRIPTION = """
-The ``numpy_vb_common`` setup script defining various variables and data
-structures used through-out the bench can be found here_
+These historical benchmark graphs were produced with `vbench
+<http://github.com/pydata/vbench>`__ (ATM with yet to be integrated
+upstream changes in https://github.com/pydata/vbench/pull/33).
 
-.. _here: https://github.com/yarikoptic/numpy-vbench/blob/master/numpy_vb_common.py
+Original repository with the The `numpy_vb_common
+<https://github.com/yarikoptic/numpy-vbench/blob/master/numpy_vb_common.py>`__
+setup script defining various variables and data structures used
+through-out the bench can be found on github_ .
 
-Collect on a following machine:
+.. _github: https://github.com/yarikoptic/numpy-vbench
+
+Results were collected on a following machine:
 
   - Dual AMD Opteron(tm) Processor 246, 3GB RAM
   - Debian wheezy, amd-64 build (chroot on Debian with 3.2.0-4-amd64 kernel)
@@ -83,7 +89,8 @@ cpuinfo::
     fpu_exception   : yes
     cpuid level     : 1
     wp              : yes
-    flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext lm 3dnowext 3dnow rep_good nopl
+    flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx
+	                  fxsr sse sse2 syscall nx mmxext lm 3dnowext 3dnow rep_good nopl
     bogomips        : 3988.06
     TLB size        : 1024 4K pages
     clflush size    : 64
