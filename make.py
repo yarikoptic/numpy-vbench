@@ -25,10 +25,9 @@ os.environ['PYTHONPATH'] = '..'
 
 SPHINX_BUILD = 'sphinxbuild'
 
-from suite import benchmarks, DB_PATH, RST_BASE, DESCRIPTION, REPO_PATH, REPO_BROWSE, BRANCHES
-
 def update():
     # building could be needed for verify
+    from suite import REPO_PATH
     os.system('cd %s; git pull --ff-only; python setup.py build_ext --inplace' % REPO_PATH)
 
 def upload():
@@ -52,6 +51,8 @@ def generate_rsts():
     """Prepare build/source which acquires original RST_BASE with generated files placed in
     """
     from vbench.reports import generate_rst_files, generate_rst_analysis
+    from suite import benchmarks, DB_PATH, RST_BASE, DESCRIPTION, REPO_BROWSE, BRANCHES
+
 
     os.system('rsync -a %s build/' % RST_BASE)
     outpath = os.path.join('build', RST_BASE)
