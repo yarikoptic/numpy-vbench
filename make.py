@@ -41,7 +41,7 @@ def upload():
     ghp-import -p build/html -n
     git push -f origin gh-pages
     """
-    os.system('git branch -D gh-pages && git gc --aggressive && ghp-import -p build/html -n && git push -f origin gh-pages')
+    os.system('git branch -D gh-pages && git gc --aggressive ; ghp-import -p build/html -n && git push -f origin gh-pages')
 
 def clean():
     if os.path.exists('build'):
