@@ -90,7 +90,7 @@ cpuinfo::
     cpuid level     : 1
     wp              : yes
     flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx
-	                  fxsr sse sse2 syscall nx mmxext lm 3dnowext 3dnow rep_good nopl
+                      fxsr sse sse2 syscall nx mmxext lm 3dnowext 3dnow rep_good nopl
     bogomips        : 3988.06
     TLB size        : 1024 4K pages
     clflush size    : 64
