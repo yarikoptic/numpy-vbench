@@ -5,7 +5,7 @@ import os, sys
 from vbench.api import collect_benchmarks
 
 log = logging.getLogger('vb')
-log.setLevel(logging.DEBUG)
+log.setLevel(logging.INFO)
 #log.addHandler(logging.StreamHandler(sys.stdout))
 
 benchmarks = collect_benchmarks(
