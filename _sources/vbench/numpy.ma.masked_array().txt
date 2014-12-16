@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.ma.masked_array()
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.ma.masked_array__.png
+   :width: 6in

@@ -1,0 +1,16 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    d = np.arange(80000, dtype=np.intp); e = d.astype(np.float64)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    np.bincount(d, weights=e)
+
+**Performance graph**
+
+.. image:: vbench/figures/bincount_weights.png
+   :width: 6in

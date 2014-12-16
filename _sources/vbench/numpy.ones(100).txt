@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.ones(100)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.ones_100_.png
+   :width: 6in

@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    a=numpy.arange(100000)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.random.shuffle(a)
+
+**Performance graph**
+
+.. image:: vbench/figures/vb_random_shuffle100000.png
+   :width: 6in

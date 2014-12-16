@@ -1,0 +1,23 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    from tempfile import TemporaryFile
+    
+    d = numpy.arange(50*500, dtype=numpy.float32).reshape((500,50))
+    e = numpy.arange(50*500, dtype=numpy.float32).reshape((50,500))
+    e_d = e.reshape(d.shape)
+    dflat = numpy.arange(50*500, dtype=numpy.float32)
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    d[...] = e.T
+
+**Performance graph**
+
+.. image:: vbench/figures/strided_copy_float32.png
+   :width: 6in

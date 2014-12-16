@@ -1,0 +1,148 @@
+vb_core
+=======
+
+
+.. _numpy.arange_100_:
+
+numpy.arange(100)
+-----------------
+.. include:: vbench/numpy.arange(100).rst
+
+.. _numpy.array_1_:
+
+numpy.array(1)
+--------------
+.. include:: vbench/numpy.array(1).rst
+
+.. _numpy.array__1__:
+
+numpy.array([1])
+----------------
+.. include:: vbench/numpy.array([1]).rst
+
+.. _numpy.array____:
+
+numpy.array([])
+---------------
+.. include:: vbench/numpy.array([]).rst
+
+.. _numpy.array_l_:
+
+numpy.array(l)
+--------------
+.. include:: vbench/numpy.array(l).rst
+
+.. _numpy.array_l100_:
+
+numpy.array(l100)
+-----------------
+.. include:: vbench/numpy.array(l100).rst
+
+.. _numpy.diag_l100_:
+
+numpy.diag(l100)
+----------------
+.. include:: vbench/numpy.diag(l100).rst
+
+.. _numpy.diagflat__l50__l50__:
+
+numpy.diagflat([l50, l50])
+--------------------------
+.. include:: vbench/numpy.diagflat([l50, l50]).rst
+
+.. _numpy.diagflat_l100_:
+
+numpy.diagflat(l100)
+--------------------
+.. include:: vbench/numpy.diagflat(l100).rst
+
+.. _numpy.dstack_l_:
+
+numpy.dstack(l)
+---------------
+.. include:: vbench/numpy.dstack(l).rst
+
+.. _numpy.empty_100_:
+
+numpy.empty(100)
+----------------
+.. include:: vbench/numpy.empty(100).rst
+
+.. _numpy.eye_100_:
+
+numpy.eye(100)
+--------------
+.. include:: vbench/numpy.eye(100).rst
+
+.. _numpy.eye_3000_:
+
+numpy.eye(3000)
+---------------
+.. include:: vbench/numpy.eye(3000).rst
+
+.. _numpy.hstack_l_:
+
+numpy.hstack(l)
+---------------
+.. include:: vbench/numpy.hstack(l).rst
+
+.. _numpy.identity_100_:
+
+numpy.identity(100)
+-------------------
+.. include:: vbench/numpy.identity(100).rst
+
+.. _numpy.identity_3000_:
+
+numpy.identity(3000)
+--------------------
+.. include:: vbench/numpy.identity(3000).rst
+
+.. _numpy.ma.masked_array__:
+
+numpy.ma.masked_array()
+-----------------------
+.. include:: vbench/numpy.ma.masked_array().rst
+
+.. _numpy.ma.masked_array_l100_:
+
+numpy.ma.masked_array(l100)
+---------------------------
+.. include:: vbench/numpy.ma.masked_array(l100).rst
+
+.. _numpy.ma.masked_array_l100_t100_:
+
+numpy.ma.masked_array(l100,t100)
+--------------------------------
+.. include:: vbench/numpy.ma.masked_array(l100,t100).rst
+
+.. _numpy.ones_100_:
+
+numpy.ones(100)
+---------------
+.. include:: vbench/numpy.ones(100).rst
+
+.. _numpy.tril_l10x10_:
+
+numpy.tril(l10x10)
+------------------
+.. include:: vbench/numpy.tril(l10x10).rst
+
+.. _numpy.triu_l10x10_:
+
+numpy.triu(l10x10)
+------------------
+.. include:: vbench/numpy.triu(l10x10).rst
+
+.. _numpy.vstack_l_:
+
+numpy.vstack(l)
+---------------
+.. include:: vbench/numpy.vstack(l).rst
+
+.. _numpy.zeros_100_:
+
+numpy.zeros(100)
+----------------
+.. include:: vbench/numpy.zeros(100).rst
+

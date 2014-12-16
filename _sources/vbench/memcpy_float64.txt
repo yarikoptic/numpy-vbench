@@ -1,0 +1,23 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    from tempfile import TemporaryFile
+    
+    d = numpy.arange(50*500, dtype=numpy.float64).reshape((500,50))
+    e = numpy.arange(50*500, dtype=numpy.float64).reshape((50,500))
+    e_d = e.reshape(d.shape)
+    dflat = numpy.arange(50*500, dtype=numpy.float64)
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    d[...] = e_d
+
+**Performance graph**
+
+.. image:: vbench/figures/memcpy_float64.png
+   :width: 6in

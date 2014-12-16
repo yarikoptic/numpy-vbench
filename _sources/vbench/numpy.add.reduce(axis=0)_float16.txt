@@ -1,0 +1,18 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    
+    a = squares['float16']
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.add.reduce(a, axis=0)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.add.reduce_axis=0__float16.png
+   :width: 6in

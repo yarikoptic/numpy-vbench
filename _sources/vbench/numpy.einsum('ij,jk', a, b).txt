@@ -1,0 +1,21 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    a = numpy.arange(60000.).reshape(150, 400)
+    b = numpy.arange(240000.).reshape(400, 600)
+    c = numpy.arange(600)
+    d = numpy.arange(400)
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.einsum('ij,jk', a, b)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.einsum_'ij_jk'__a__b_.png
+   :width: 6in

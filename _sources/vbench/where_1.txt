@@ -1,0 +1,16 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    d = np.arange(20000); cond = d > 5000
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    np.where(cond)
+
+**Performance graph**
+
+.. image:: vbench/figures/where_1.png
+   :width: 6in

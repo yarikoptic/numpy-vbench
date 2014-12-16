@@ -1,0 +1,232 @@
+vb_linalg
+=========
+
+
+.. _numpy.dot_a__b_:
+
+numpy.dot(a, b)
+---------------
+.. include:: vbench/numpy.dot(a, b).rst
+
+.. _numpy.dot_d__numpy.dot_b__c__:
+
+numpy.dot(d, numpy.dot(b, c))
+-----------------------------
+.. include:: vbench/numpy.dot(d, numpy.dot(b, c)).rst
+
+.. _numpy.einsum_'i_ij_j'__d__b__c_:
+
+numpy.einsum('i,ij,j', d, b, c)
+-------------------------------
+.. include:: vbench/numpy.einsum('i,ij,j', d, b, c).rst
+
+.. _numpy.einsum_'ij_jk'__a__b_:
+
+numpy.einsum('ij,jk', a, b)
+---------------------------
+.. include:: vbench/numpy.einsum('ij,jk', a, b).rst
+
+.. _numpy.einsum_'ijk_jil_>kl'__a__b_:
+
+numpy.einsum('ijk,jil->kl', a, b)
+---------------------------------
+.. include:: vbench/numpy.einsum('ijk,jil->kl', a, b).rst
+
+.. _numpy.linalg.det_a__complex128:
+
+numpy.linalg.det(a)_complex128
+------------------------------
+.. include:: vbench/numpy.linalg.det(a)_complex128.rst
+
+.. _numpy.linalg.det_a__complex64:
+
+numpy.linalg.det(a)_complex64
+-----------------------------
+.. include:: vbench/numpy.linalg.det(a)_complex64.rst
+
+.. _numpy.linalg.det_a__float32:
+
+numpy.linalg.det(a)_float32
+---------------------------
+.. include:: vbench/numpy.linalg.det(a)_float32.rst
+
+.. _numpy.linalg.det_a__float64:
+
+numpy.linalg.det(a)_float64
+---------------------------
+.. include:: vbench/numpy.linalg.det(a)_float64.rst
+
+.. _numpy.linalg.det_a__int16:
+
+numpy.linalg.det(a)_int16
+-------------------------
+.. include:: vbench/numpy.linalg.det(a)_int16.rst
+
+.. _numpy.linalg.det_a__int32:
+
+numpy.linalg.det(a)_int32
+-------------------------
+.. include:: vbench/numpy.linalg.det(a)_int32.rst
+
+.. _numpy.linalg.det_a__int64:
+
+numpy.linalg.det(a)_int64
+-------------------------
+.. include:: vbench/numpy.linalg.det(a)_int64.rst
+
+.. _numpy.linalg.lstsq_a__b__float64:
+
+numpy.linalg.lstsq(a, b)_float64
+--------------------------------
+.. include:: vbench/numpy.linalg.lstsq(a, b)_float64.rst
+
+.. _numpy.linalg.norm_a__complex128:
+
+numpy.linalg.norm(a)_complex128
+-------------------------------
+.. include:: vbench/numpy.linalg.norm(a)_complex128.rst
+
+.. _numpy.linalg.norm_a__complex256:
+
+numpy.linalg.norm(a)_complex256
+-------------------------------
+.. include:: vbench/numpy.linalg.norm(a)_complex256.rst
+
+.. _numpy.linalg.norm_a__complex64:
+
+numpy.linalg.norm(a)_complex64
+------------------------------
+.. include:: vbench/numpy.linalg.norm(a)_complex64.rst
+
+.. _numpy.linalg.norm_a__float16:
+
+numpy.linalg.norm(a)_float16
+----------------------------
+.. include:: vbench/numpy.linalg.norm(a)_float16.rst
+
+.. _numpy.linalg.norm_a__float32:
+
+numpy.linalg.norm(a)_float32
+----------------------------
+.. include:: vbench/numpy.linalg.norm(a)_float32.rst
+
+.. _numpy.linalg.norm_a__float64:
+
+numpy.linalg.norm(a)_float64
+----------------------------
+.. include:: vbench/numpy.linalg.norm(a)_float64.rst
+
+.. _numpy.linalg.norm_a__int16:
+
+numpy.linalg.norm(a)_int16
+--------------------------
+.. include:: vbench/numpy.linalg.norm(a)_int16.rst
+
+.. _numpy.linalg.norm_a__int32:
+
+numpy.linalg.norm(a)_int32
+--------------------------
+.. include:: vbench/numpy.linalg.norm(a)_int32.rst
+
+.. _numpy.linalg.norm_a__int64:
+
+numpy.linalg.norm(a)_int64
+--------------------------
+.. include:: vbench/numpy.linalg.norm(a)_int64.rst
+
+.. _numpy.linalg.norm_a__longfloat:
+
+numpy.linalg.norm(a)_longfloat
+------------------------------
+.. include:: vbench/numpy.linalg.norm(a)_longfloat.rst
+
+.. _numpy.linalg.pinv_a__complex128:
+
+numpy.linalg.pinv(a)_complex128
+-------------------------------
+.. include:: vbench/numpy.linalg.pinv(a)_complex128.rst
+
+.. _numpy.linalg.pinv_a__complex64:
+
+numpy.linalg.pinv(a)_complex64
+------------------------------
+.. include:: vbench/numpy.linalg.pinv(a)_complex64.rst
+
+.. _numpy.linalg.pinv_a__float32:
+
+numpy.linalg.pinv(a)_float32
+----------------------------
+.. include:: vbench/numpy.linalg.pinv(a)_float32.rst
+
+.. _numpy.linalg.pinv_a__float64:
+
+numpy.linalg.pinv(a)_float64
+----------------------------
+.. include:: vbench/numpy.linalg.pinv(a)_float64.rst
+
+.. _numpy.linalg.pinv_a__int16:
+
+numpy.linalg.pinv(a)_int16
+--------------------------
+.. include:: vbench/numpy.linalg.pinv(a)_int16.rst
+
+.. _numpy.linalg.pinv_a__int32:
+
+numpy.linalg.pinv(a)_int32
+--------------------------
+.. include:: vbench/numpy.linalg.pinv(a)_int32.rst
+
+.. _numpy.linalg.pinv_a__int64:
+
+numpy.linalg.pinv(a)_int64
+--------------------------
+.. include:: vbench/numpy.linalg.pinv(a)_int64.rst
+
+.. _numpy.linalg.svd_a__complex128:
+
+numpy.linalg.svd(a)_complex128
+------------------------------
+.. include:: vbench/numpy.linalg.svd(a)_complex128.rst
+
+.. _numpy.linalg.svd_a__complex64:
+
+numpy.linalg.svd(a)_complex64
+-----------------------------
+.. include:: vbench/numpy.linalg.svd(a)_complex64.rst
+
+.. _numpy.linalg.svd_a__float32:
+
+numpy.linalg.svd(a)_float32
+---------------------------
+.. include:: vbench/numpy.linalg.svd(a)_float32.rst
+
+.. _numpy.linalg.svd_a__float64:
+
+numpy.linalg.svd(a)_float64
+---------------------------
+.. include:: vbench/numpy.linalg.svd(a)_float64.rst
+
+.. _numpy.linalg.svd_a__int16:
+
+numpy.linalg.svd(a)_int16
+-------------------------
+.. include:: vbench/numpy.linalg.svd(a)_int16.rst
+
+.. _numpy.linalg.svd_a__int32:
+
+numpy.linalg.svd(a)_int32
+-------------------------
+.. include:: vbench/numpy.linalg.svd(a)_int32.rst
+
+.. _numpy.linalg.svd_a__int64:
+
+numpy.linalg.svd(a)_int64
+-------------------------
+.. include:: vbench/numpy.linalg.svd(a)_int64.rst
+
+.. _numpy.tensordot_a__b__axes=__1_0____0_1___:
+
+numpy.tensordot(a, b, axes=([1,0], [0,1]))
+------------------------------------------
+.. include:: vbench/numpy.tensordot(a, b, axes=([1,0], [0,1])).rst
+

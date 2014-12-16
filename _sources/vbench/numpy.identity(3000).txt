@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.identity(3000)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.identity_3000_.png
+   :width: 6in

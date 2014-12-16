@@ -1,0 +1,26 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    from tempfile import TemporaryFile
+    
+    d = numpy.ones(50000)
+    e = d.copy()
+    m = d == 1
+    im = ~m
+    m8 = m.copy()
+    m8[::8] = ~(m[::8])
+    im8 = ~m8
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    np.copyto(d, e, where=m8)
+
+**Performance graph**
+
+.. image:: vbench/figures/copyto_8_sparse.png
+   :width: 6in

@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    a=squares_['int16']
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.linalg.svd(a)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.linalg.svd_a__int16.png
+   :width: 6in

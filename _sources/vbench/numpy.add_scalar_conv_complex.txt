@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    x = numpy.asarray(1.0+1j); y = complex(1., 1.)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    x+y
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.add_scalar_conv_complex.png
+   :width: 6in

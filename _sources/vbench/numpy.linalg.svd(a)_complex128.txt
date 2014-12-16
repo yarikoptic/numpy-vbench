@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    a=squares_['complex128']
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.linalg.svd(a)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.linalg.svd_a__complex128.png
+   :width: 6in

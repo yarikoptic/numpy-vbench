@@ -1,0 +1,954 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Benchmarks Performance Analysis &mdash; Vbench performance benchmarks for NumPy</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.6.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Vbench performance benchmarks for NumPy" href="index.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <h1><a href="index.html">Vbench performance benchmarks for NumPy</a></h1>
+        <div class="rel">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_app.html">vb_app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_core.html">vb_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_function_base.html">vb_function_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_indexing.html">vb_indexing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_io.html">vb_io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_linalg.html">vb_linalg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_random.html">vb_random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_reduce.html">vb_reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_ufunc.html">vb_ufunc</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" size="18" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+		  <p>
+		  <p>
+			<script type="text/javascript" src="http://www.ohloh.net/p/482908/widgets/project_partner_badge.js"></script>
+	      </p>
+        </div>
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="benchmarks-performance-analysis">
+<h1>Benchmarks Performance Analysis<a class="headerlink" href="#benchmarks-performance-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="benchmarks-analysis clear container">
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="30%" />
+<col width="6%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head stub">Benchmark</th>
+<th class="head">Check</th>
+<th class="head">Slowdown %</th>
+<th class="head">Reference date</th>
+<th class="head">Reference timing</th>
+<th class="head">Target timing</th>
+<th class="head">Possible recent</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-0-float16"><em>numpy.add.reduce(axis=0)_float16</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>189.1</td>
+<td>2011.06.02</td>
+<td>7</td>
+<td>20</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/4e179f0...00a8c0c">4e179f0...00a8c0c</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-any-fast"><em>numpy.any_fast</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>179.4</td>
+<td>2011.03.29</td>
+<td>0.0017</td>
+<td>0.0047</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/0e091af...0625671">0e091af...0625671</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-all-fast"><em>numpy.all_fast</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>177.3</td>
+<td>2011.03.29</td>
+<td>0.0017</td>
+<td>0.0047</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/f14d5e1...06440c1">f14d5e1...06440c1</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-small-reduction"><em>numpy.small_reduction</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>84.6</td>
+<td>2011.04.02</td>
+<td>0.0024</td>
+<td>0.0046</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/8bcb756...fb037eb">8bcb756...fb037eb</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_function_base.html#median-odd-small"><em>median_odd_small</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>75.5</td>
+<td>2011.03.18</td>
+<td>0.018</td>
+<td>0.031</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_function_base.html#median-even-small"><em>median_even_small</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>74.3</td>
+<td>2011.03.29</td>
+<td>0.018</td>
+<td>0.031</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_io.html#memcpy-int8"><em>memcpy_int8</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>68.7</td>
+<td>2011.04.02</td>
+<td>0.0018</td>
+<td>0.0024</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fe0f6cc...7e8e7a2">fe0f6cc...7e8e7a2</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-identity-100"><em>numpy.identity(100)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>52.2</td>
+<td>2011.12.04</td>
+<td>0.009</td>
+<td>0.014</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/58350f4...cd0b8e7">58350f4...cd0b8e7</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-ones-100"><em>numpy.ones(100)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>47.3</td>
+<td>2011.04.02</td>
+<td>0.002</td>
+<td>0.0029</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_linalg.html#numpy-linalg-norm-a-float16"><em>numpy.linalg.norm(a)_float16</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>34.5</td>
+<td>2014.11.19</td>
+<td>0.11</td>
+<td>0.13</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/a32625e...4083883">a32625e...4083883</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-ma-masked-array"><em>numpy.ma.masked_array()</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>33.4</td>
+<td>2014.08.04</td>
+<td>0.022</td>
+<td>0.028</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/e73ee5d...eb61066">e73ee5d...eb61066</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_io.html#strided-assign-complex128"><em>strided_assign_complex128</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>33.2</td>
+<td>2011.03.26</td>
+<td>0.023</td>
+<td>0.03</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/cfa095a...9671491">cfa095a...9671491</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#min-np-intp"><em>min_np.intp</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>32.3</td>
+<td>2011.08.26</td>
+<td>0.021</td>
+<td>0.028</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fb037eb...31b94e8">fb037eb...31b94e8</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_io.html#copyto-8-sparse"><em>copyto_8_sparse</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>31.3</td>
+<td>2011.08.26</td>
+<td>0.15</td>
+<td>0.22</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/e73ee5d...eb61066">e73ee5d...eb61066</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-tril-l10x10"><em>numpy.tril(l10x10)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>30.3</td>
+<td>2014.02.15</td>
+<td>0.015</td>
+<td>0.019</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/7be18ed...3b22d87">7be18ed...3b22d87</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-vstack-l"><em>numpy.vstack(l)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>29.6</td>
+<td>2011.04.02</td>
+<td>0.007</td>
+<td>0.0089</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/7be18ed...3b22d87">7be18ed...3b22d87</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-ma-masked-array-l100-t100"><em>numpy.ma.masked_array(l100,t100)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>24.1</td>
+<td>2014.07.30</td>
+<td>0.034</td>
+<td>0.042</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-array-l"><em>numpy.array(l)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>21.9</td>
+<td>2014.07.05</td>
+<td>0.0027</td>
+<td>0.0031</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/1657544...7be18ed">1657544...7be18ed</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_function_base.html#sort-inplace"><em>sort_inplace</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>21.9</td>
+<td>2011.03.29</td>
+<td>0.13</td>
+<td>0.15</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_indexing.html#a-np-ix-indexes-indexes-1"><em>a[np.ix_(indexes_, indexes_)]=1</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>20.9</td>
+<td>2014.04.03</td>
+<td>1.3</td>
+<td>1.6</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/1657544...7be18ed">1657544...7be18ed</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_function_base.html#sort"><em>sort</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>20.8</td>
+<td>2011.03.29</td>
+<td>0.14</td>
+<td>0.15</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_indexing.html#a-np-ix-indexes-rand-indexes-rand-1"><em>a[np.ix_(indexes_rand_, indexes_rand_)]=1</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>20.3</td>
+<td>2014.03.27</td>
+<td>1.3</td>
+<td>1.6</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/e73ee5d...eb61066">e73ee5d...eb61066</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#id3"><em>numpy.array([1])</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>18.9</td>
+<td>2014.06.09</td>
+<td>0.00099</td>
+<td>0.0011</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/975267d...25aff4d">975267d...25aff4d</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-ones-like-a-10types"><em>numpy.ones_like(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>18.6</td>
+<td>2012.03.10</td>
+<td>0.2</td>
+<td>0.23</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-1-int64"><em>numpy.add.reduce(axis=1)_int64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>18.2</td>
+<td>2011.07.06</td>
+<td>2.1</td>
+<td>2.5</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/23f20aa...68ffaec">23f20aa...68ffaec</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-1-int32"><em>numpy.add.reduce(axis=1)_int32</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>17.2</td>
+<td>2014.11.19</td>
+<td>1.7</td>
+<td>2</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/975267d...25aff4d">975267d...25aff4d</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-1-longfloat"><em>numpy.add.reduce(axis=1)_longfloat</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>16.5</td>
+<td>2011.06.09</td>
+<td>4.8</td>
+<td>5.5</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/e73ee5d...eb61066">e73ee5d...eb61066</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-arange-100"><em>numpy.arange(100)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>15.5</td>
+<td>2014.06.30</td>
+<td>0.00077</td>
+<td>0.00089</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fb037eb...31b94e8">fb037eb...31b94e8</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-array"><em>numpy.array([])</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>14.2</td>
+<td>2014.05.16</td>
+<td>0.00076</td>
+<td>0.00084</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/975267d...25aff4d">975267d...25aff4d</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-not-bool"><em>numpy.not_bool</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>13.6</td>
+<td>2014.10.20</td>
+<td>0.0024</td>
+<td>0.0028</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/b6903d7...029662b">b6903d7...029662b</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_function_base.html#where-2-broadcast"><em>where_2_broadcast</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>10.5</td>
+<td>2014.05.26</td>
+<td>0.04</td>
+<td>0.044</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fe7816d...fb40fe8">fe7816d...fb40fe8</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-ldexp-a-a-3types"><em>numpy.ldexp(a,a)_3types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>10.5</td>
+<td>2014.05.26</td>
+<td>0.57</td>
+<td>0.63</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/a435de3...0e091af">a435de3...0e091af</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-hstack-l"><em>numpy.hstack(l)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>10.2</td>
+<td>2011.03.27</td>
+<td>0.0068</td>
+<td>0.0074</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc">c7ad14f...fe0f6cc</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-right-shift-a-a-3types"><em>numpy.right_shift(a,a)_3types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>9.8</td>
+<td>2014.10.21</td>
+<td>0.093</td>
+<td>0.1</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/5eb6e36...6a4aa59">5eb6e36...6a4aa59</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-0-int16"><em>numpy.add.reduce(axis=0)_int16</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>9.6</td>
+<td>2014.10.21</td>
+<td>1.7</td>
+<td>1.9</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/8bcb756...fb037eb">8bcb756...fb037eb</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-0-int64"><em>numpy.add.reduce(axis=0)_int64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>8.7</td>
+<td>2014.10.21</td>
+<td>2.3</td>
+<td>2.5</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/e73ee5d...eb61066">e73ee5d...eb61066</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_function_base.html#bincount-weights"><em>bincount_weights</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>8.4</td>
+<td>2014.03.16</td>
+<td>0.43</td>
+<td>0.47</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/68ffaec...8bcb756">68ffaec...8bcb756</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_function_base.html#where-2"><em>where_2</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>7.7</td>
+<td>2014.03.13</td>
+<td>0.041</td>
+<td>0.044</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/22ae193...e065a26">22ae193...e065a26</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-spacing-a-7types"><em>numpy.spacing(a)_7types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>7.6</td>
+<td>2014.10.21</td>
+<td>0.91</td>
+<td>0.98</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/8e113c9...9636420">8e113c9...9636420</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-1-float16"><em>numpy.add.reduce(axis=1)_float16</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>7.0</td>
+<td>2014.03.30</td>
+<td>5.1</td>
+<td>5.6</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/53a202b...c2d7845">53a202b...c2d7845</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_linalg.html#numpy-einsum-ijk-jil-kl-a-b"><em>numpy.einsum(&#8216;ijk,jil-&gt;kl&#8217;, a, b)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>6.9</td>
+<td>2011.04.03</td>
+<td>63</td>
+<td>69</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/53a202b...c2d7845">53a202b...c2d7845</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-array-1"><em>numpy.array(1)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>6.8</td>
+<td>2014.06.09</td>
+<td>0.00043</td>
+<td>0.00052</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/bd8d70a...3dfc6d6">bd8d70a...3dfc6d6</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_function_base.html#percentile"><em>percentile</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>6.8</td>
+<td>2014.10.21</td>
+<td>0.099</td>
+<td>0.11</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/22ae193...e065a26">22ae193...e065a26</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_io.html#cont-assign-int8"><em>cont_assign_int8</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>6.4</td>
+<td>2014.06.08</td>
+<td>0.0014</td>
+<td>0.0015</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-less-than-scalar2-numpy-float32"><em>numpy.less_than_scalar2_numpy.float32</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>6.1</td>
+<td>2014.05.19</td>
+<td>0.0074</td>
+<td>0.0078</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/8cdc5f5...73d87a7">8cdc5f5...73d87a7</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_io.html#memcpy-complex128"><em>memcpy_complex128</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>5.9</td>
+<td>2013.09.22</td>
+<td>0.076</td>
+<td>0.081</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/0d30aef...066be28">0d30aef...066be28</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_io.html#copyto-8-dense"><em>copyto_8_dense</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>5.1</td>
+<td>2011.08.26</td>
+<td>0.18</td>
+<td>0.19</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fb037eb...31b94e8">fb037eb...31b94e8</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_io.html#cont-assign-int16"><em>cont_assign_int16</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>5.1</td>
+<td>2014.05.19</td>
+<td>0.0036</td>
+<td>0.0041</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/25aff4d...f14d5e1">25aff4d...f14d5e1</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_random.html#numpy-random-normal-size-100-100"><em>numpy.random.normal(size=(100,100))</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>5.0</td>
+<td>2012.01.28</td>
+<td>0.83</td>
+<td>0.85</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/befb246...22ae193">befb246...22ae193</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_indexing.html#id5"><em>a[indexes_]</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>5.0</td>
+<td>2014.07.20</td>
+<td>0.25</td>
+<td>0.26</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc">c7ad14f...fe0f6cc</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-empty-100"><em>numpy.empty(100)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>5.0</td>
+<td>2014.06.08</td>
+<td>0.00093</td>
+<td>0.001</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/7b3809b...df9db6e">7b3809b...df9db6e</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-0-complex64"><em>numpy.add.reduce(axis=0)_complex64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>4.9</td>
+<td>2012.09.02</td>
+<td>2.8</td>
+<td>2.9</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-less-than-scalar2-numpy-float64"><em>numpy.less_than_scalar2_numpy.float64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>4.7</td>
+<td>2014.06.30</td>
+<td>0.011</td>
+<td>0.012</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/caeb888...002b0de">caeb888...002b0de</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_indexing.html#id9"><em>a[indexes_rand_]</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>4.6</td>
+<td>2014.07.20</td>
+<td>0.25</td>
+<td>0.26</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc">c7ad14f...fe0f6cc</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_function_base.html#median-even-inplace"><em>median_even_inplace</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>4.6</td>
+<td>2014.10.16</td>
+<td>0.051</td>
+<td>0.052</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-add-scalar-conv-complex"><em>numpy.add_scalar_conv_complex</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>4.5</td>
+<td>2014.11.19</td>
+<td>0.0013</td>
+<td>0.0015</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc">c7ad14f...fe0f6cc</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-ma-masked-array-l100"><em>numpy.ma.masked_array(l100)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>4.5</td>
+<td>2014.05.26</td>
+<td>1.1</td>
+<td>1.2</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/23f20aa...68ffaec">23f20aa...68ffaec</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-add-scalar-conv"><em>numpy.add_scalar_conv</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>4.2</td>
+<td>2014.10.24</td>
+<td>0.0012</td>
+<td>0.0014</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fa14ae0...58350f4">fa14ae0...58350f4</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-signbit-a-7types"><em>numpy.signbit(a)_7types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>4.2</td>
+<td>2014.05.26</td>
+<td>0.32</td>
+<td>0.33</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/1e72312...860489c">1e72312...860489c</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_linalg.html#numpy-linalg-det-a-int64"><em>numpy.linalg.det(a)_int64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>3.7</td>
+<td>2014.06.02</td>
+<td>0.09</td>
+<td>0.093</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/e73ee5d...eb61066">e73ee5d...eb61066</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_linalg.html#numpy-linalg-det-a-int16"><em>numpy.linalg.det(a)_int16</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>3.5</td>
+<td>2014.07.04</td>
+<td>0.085</td>
+<td>0.087</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc">c7ad14f...fe0f6cc</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_linalg.html#numpy-linalg-norm-a-int32"><em>numpy.linalg.norm(a)_int32</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>3.4</td>
+<td>2014.10.21</td>
+<td>0.027</td>
+<td>0.027</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/1246dbc...8dd530b">1246dbc...8dd530b</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-zeros-100"><em>numpy.zeros(100)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>3.3</td>
+<td>2014.06.08</td>
+<td>0.00096</td>
+<td>0.001</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fa14ae0...58350f4">fa14ae0...58350f4</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-power-a-a-10types"><em>numpy.power(a,a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>3.2</td>
+<td>2011.05.07</td>
+<td>3.4</td>
+<td>3.5</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/e73ee5d...eb61066">e73ee5d...eb61066</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-0-complex256"><em>numpy.add.reduce(axis=0)_complex256</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.8</td>
+<td>2013.04.03</td>
+<td>12</td>
+<td>13</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fe7816d...fb40fe8">fe7816d...fb40fe8</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-1"><em>numpy.add.reduce(axis=1)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.7</td>
+<td>2014.04.03</td>
+<td>38</td>
+<td>39</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/975267d...25aff4d">975267d...25aff4d</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_io.html#strided-copy-complex128"><em>strided_copy_complex128</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.6</td>
+<td>2014.06.02</td>
+<td>0.1</td>
+<td>0.11</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c2d7845...9bfd76e">c2d7845...9bfd76e</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_linalg.html#numpy-linalg-norm-a-float64"><em>numpy.linalg.norm(a)_float64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.5</td>
+<td>2014.10.21</td>
+<td>0.034</td>
+<td>0.034</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc">c7ad14f...fe0f6cc</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-diagflat-l100"><em>numpy.diagflat(l100)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.2</td>
+<td>2014.06.30</td>
+<td>0.029</td>
+<td>0.03</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/975267d...25aff4d">975267d...25aff4d</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_linalg.html#numpy-linalg-norm-a-complex64"><em>numpy.linalg.norm(a)_complex64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.1</td>
+<td>2014.10.21</td>
+<td>0.051</td>
+<td>0.052</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc">c7ad14f...fe0f6cc</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_indexing.html#a-indexes-1"><em>a[:,indexes_]=1</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.1</td>
+<td>2014.06.02</td>
+<td>0.4</td>
+<td>0.41</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fe7816d...fb40fe8">fe7816d...fb40fe8</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_indexing.html#a-indexes"><em>a[:,indexes_]</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.1</td>
+<td>2014.10.21</td>
+<td>0.46</td>
+<td>0.47</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fb037eb...31b94e8">fb037eb...31b94e8</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_core.html#numpy-diagflat-l50-l50"><em>numpy.diagflat([l50, l50])</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.1</td>
+<td>2014.07.03</td>
+<td>0.03</td>
+<td>0.031</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/975267d...25aff4d">975267d...25aff4d</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_indexing.html#id7"><em>a[indexes_]=1</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.0</td>
+<td>2014.06.08</td>
+<td>0.28</td>
+<td>0.28</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-floor-a-7types"><em>numpy.floor(a)_7types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>2.0</td>
+<td>2014.03.30</td>
+<td>0.84</td>
+<td>0.86</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/8cdc5f5...73d87a7">8cdc5f5...73d87a7</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-sin-a-10types"><em>numpy.sin(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.9</td>
+<td>2014.10.26</td>
+<td>7</td>
+<td>7.1</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/060aed9...c7ad14f">060aed9...c7ad14f</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_indexing.html#a-indexes-rand-1"><em>a[:,indexes_rand_]=1</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.9</td>
+<td>2014.06.02</td>
+<td>0.46</td>
+<td>0.47</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fe7816d...fb40fe8">fe7816d...fb40fe8</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_linalg.html#numpy-linalg-norm-a-float32"><em>numpy.linalg.norm(a)_float32</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.9</td>
+<td>2014.10.11</td>
+<td>0.029</td>
+<td>0.03</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc">c7ad14f...fe0f6cc</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-rint-a-10types"><em>numpy.rint(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.9</td>
+<td>2014.10.17</td>
+<td>1.3</td>
+<td>1.4</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/49b0628...db710ce">49b0628...db710ce</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-add-scalar2-numpy-float32"><em>numpy.add_scalar2_numpy.float32</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.8</td>
+<td>2014.07.06</td>
+<td>0.011</td>
+<td>0.013</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/4d94317...927cfcf">4d94317...927cfcf</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-isnan-a-10types"><em>numpy.isnan(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.8</td>
+<td>2014.10.19</td>
+<td>0.41</td>
+<td>0.42</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/6457686...8e113c9">6457686...8e113c9</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-frexp-a-7types"><em>numpy.frexp(a)_7types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.8</td>
+<td>2014.06.02</td>
+<td>0.9</td>
+<td>0.93</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/256d256...23ee379">256d256...23ee379</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_random.html#numpy-random-weibull-1-size-100-100"><em>numpy.random.weibull(1, size=(100,100))</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.5</td>
+<td>2013.09.22</td>
+<td>1.2</td>
+<td>1.3</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/68ffaec...8bcb756">68ffaec...8bcb756</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-sqrt-a-10types"><em>numpy.sqrt(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.5</td>
+<td>2014.07.10</td>
+<td>2.2</td>
+<td>2.3</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/424b56e...12472aa">424b56e...12472aa</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_io.html#strided-copy-float32"><em>strided_copy_float32</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.5</td>
+<td>2014.06.08</td>
+<td>0.02</td>
+<td>0.02</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fb40fe8...256d256">fb40fe8...256d256</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-isfinite-a-10types"><em>numpy.isfinite(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.4</td>
+<td>2014.10.19</td>
+<td>0.47</td>
+<td>0.48</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/280f605...fe7816d">280f605...fe7816d</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-isinf-a-10types"><em>numpy.isinf(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.3</td>
+<td>2014.10.19</td>
+<td>0.65</td>
+<td>0.65</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fe7816d...fb40fe8">fe7816d...fb40fe8</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-conjugate-a-10types"><em>numpy.conjugate(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.3</td>
+<td>2014.10.16</td>
+<td>0.49</td>
+<td>0.5</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_io.html#vb-savez-squares"><em>vb_savez_squares</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.2</td>
+<td>2014.07.10</td>
+<td>4.5e+02</td>
+<td>4.5e+02</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-conj-a-10types"><em>numpy.conj(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.2</td>
+<td>2014.11.17</td>
+<td>0.49</td>
+<td>0.5</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/7eff5b8...d6d6795">7eff5b8...d6d6795</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-divide-scalar2-numpy-float32"><em>numpy.divide_scalar2_numpy.float32</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.2</td>
+<td>2014.06.30</td>
+<td>0.031</td>
+<td>0.031</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc">c7ad14f...fe0f6cc</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-divide-scalar2-inplace-numpy-float32"><em>numpy.divide_scalar2_inplace_numpy.float32</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>1.1</td>
+<td>2014.06.02</td>
+<td>0.031</td>
+<td>0.031</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_reduce.html#numpy-add-reduce-axis-0"><em>numpy.add.reduce(axis=0)</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>0.9</td>
+<td>2014.11.11</td>
+<td>57</td>
+<td>58</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-nextafter-a-a-7types"><em>numpy.nextafter(a,a)_7types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>0.8</td>
+<td>2014.10.16</td>
+<td>1</td>
+<td>1</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/8cdc5f5...73d87a7">8cdc5f5...73d87a7</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-true-divide-a-a-10types"><em>numpy.true_divide(a,a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>0.7</td>
+<td>2011.03.26</td>
+<td>2</td>
+<td>2.1</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/99329f9...4e32035">99329f9...4e32035</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_random.html#numpy-random-poisson-10-size-100-100"><em>numpy.random.poisson(10,size=(100,100))</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>0.6</td>
+<td>2014.06.02</td>
+<td>4.3</td>
+<td>4.3</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/e73ee5d...eb61066">e73ee5d...eb61066</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-log-a-10types"><em>numpy.log(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>0.5</td>
+<td>2014.06.02</td>
+<td>5.9</td>
+<td>5.9</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/53a202b...c2d7845">53a202b...c2d7845</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-divide-scalar2-inplace-numpy-float64"><em>numpy.divide_scalar2_inplace_numpy.float64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>0.5</td>
+<td>2014.06.17</td>
+<td>0.066</td>
+<td>0.067</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_io.html#cont-assign-float64"><em>cont_assign_float64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>0.4</td>
+<td>2014.07.16</td>
+<td>0.015</td>
+<td>0.015</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/8bcb756...fb037eb">8bcb756...fb037eb</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-divide-scalar2-numpy-float64"><em>numpy.divide_scalar2_numpy.float64</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>0.4</td>
+<td>2014.07.03</td>
+<td>0.066</td>
+<td>0.067</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/eb61066...74b0836">eb61066...74b0836</a></td>
+</tr>
+<tr class="row-even"><th class="stub"><a class="reference internal" href="vb_vb_ufunc.html#numpy-absolute-a-10types"><em>numpy.absolute(a)_10types</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>0.3</td>
+<td>2014.01.15</td>
+<td>1</td>
+<td>1.1</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/fb037eb...31b94e8">fb037eb...31b94e8</a></td>
+</tr>
+<tr class="row-odd"><th class="stub"><a class="reference internal" href="vb_vb_io.html#strided-copy-int8"><em>strided_copy_int8</em></a></th>
+<td>ConsistentlyWorse(10)</td>
+<td>-0.1</td>
+<td>2014.06.02</td>
+<td>0.018</td>
+<td>0.018</td>
+<td><a class="reference external" href="https://github.com/numpy/numpy/compare/5a78905...1246dbc">5a78905...1246dbc</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="genindex.html" title="General Index"
+             >index</a>
+            <br/>
+            <a href="_sources/analysis.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2013, the NumPy development team.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

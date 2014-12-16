@@ -1,0 +1,20 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import squares;
+    import numpy
+    from tempfile import TemporaryFile
+    outfile = TemporaryFile()
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.savez(outfile, squares)
+
+**Performance graph**
+
+.. image:: vbench/figures/vb_savez_squares.png
+   :width: 6in

@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    d = numpy.ones(20000, dtype=numpy.float64)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    d < 1
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.less_than_scalar2_numpy.float64.png
+   :width: 6in

@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    types=['int32', 'int16', 'int64']
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    [numpy.bitwise_or(a,a) for t, a in squares_.iteritems() if t in types]
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.bitwise_or_a_a__3types.png
+   :width: 6in

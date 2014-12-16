@@ -1,0 +1,202 @@
+vb_reduce
+=========
+
+
+.. _max_np.float32:
+
+max_np.float32
+--------------
+.. include:: vbench/max_np.float32.rst
+
+.. _max_np.float64:
+
+max_np.float64
+--------------
+.. include:: vbench/max_np.float64.rst
+
+.. _max_np.intp:
+
+max_np.intp
+-----------
+.. include:: vbench/max_np.intp.rst
+
+.. _min_np.float32:
+
+min_np.float32
+--------------
+.. include:: vbench/min_np.float32.rst
+
+.. _min_np.float64:
+
+min_np.float64
+--------------
+.. include:: vbench/min_np.float64.rst
+
+.. _min_np.intp:
+
+min_np.intp
+-----------
+.. include:: vbench/min_np.intp.rst
+
+.. _numpy.add.reduce_axis=0_:
+
+numpy.add.reduce(axis=0)
+------------------------
+.. include:: vbench/numpy.add.reduce(axis=0).rst
+
+.. _numpy.add.reduce_axis=0__complex128:
+
+numpy.add.reduce(axis=0)_complex128
+-----------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_complex128.rst
+
+.. _numpy.add.reduce_axis=0__complex256:
+
+numpy.add.reduce(axis=0)_complex256
+-----------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_complex256.rst
+
+.. _numpy.add.reduce_axis=0__complex64:
+
+numpy.add.reduce(axis=0)_complex64
+----------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_complex64.rst
+
+.. _numpy.add.reduce_axis=0__float16:
+
+numpy.add.reduce(axis=0)_float16
+--------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_float16.rst
+
+.. _numpy.add.reduce_axis=0__float32:
+
+numpy.add.reduce(axis=0)_float32
+--------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_float32.rst
+
+.. _numpy.add.reduce_axis=0__float64:
+
+numpy.add.reduce(axis=0)_float64
+--------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_float64.rst
+
+.. _numpy.add.reduce_axis=0__int16:
+
+numpy.add.reduce(axis=0)_int16
+------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_int16.rst
+
+.. _numpy.add.reduce_axis=0__int32:
+
+numpy.add.reduce(axis=0)_int32
+------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_int32.rst
+
+.. _numpy.add.reduce_axis=0__int64:
+
+numpy.add.reduce(axis=0)_int64
+------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_int64.rst
+
+.. _numpy.add.reduce_axis=0__longfloat:
+
+numpy.add.reduce(axis=0)_longfloat
+----------------------------------
+.. include:: vbench/numpy.add.reduce(axis=0)_longfloat.rst
+
+.. _numpy.add.reduce_axis=1_:
+
+numpy.add.reduce(axis=1)
+------------------------
+.. include:: vbench/numpy.add.reduce(axis=1).rst
+
+.. _numpy.add.reduce_axis=1__complex128:
+
+numpy.add.reduce(axis=1)_complex128
+-----------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_complex128.rst
+
+.. _numpy.add.reduce_axis=1__complex256:
+
+numpy.add.reduce(axis=1)_complex256
+-----------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_complex256.rst
+
+.. _numpy.add.reduce_axis=1__complex64:
+
+numpy.add.reduce(axis=1)_complex64
+----------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_complex64.rst
+
+.. _numpy.add.reduce_axis=1__float16:
+
+numpy.add.reduce(axis=1)_float16
+--------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_float16.rst
+
+.. _numpy.add.reduce_axis=1__float32:
+
+numpy.add.reduce(axis=1)_float32
+--------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_float32.rst
+
+.. _numpy.add.reduce_axis=1__float64:
+
+numpy.add.reduce(axis=1)_float64
+--------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_float64.rst
+
+.. _numpy.add.reduce_axis=1__int16:
+
+numpy.add.reduce(axis=1)_int16
+------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_int16.rst
+
+.. _numpy.add.reduce_axis=1__int32:
+
+numpy.add.reduce(axis=1)_int32
+------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_int32.rst
+
+.. _numpy.add.reduce_axis=1__int64:
+
+numpy.add.reduce(axis=1)_int64
+------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_int64.rst
+
+.. _numpy.add.reduce_axis=1__longfloat:
+
+numpy.add.reduce(axis=1)_longfloat
+----------------------------------
+.. include:: vbench/numpy.add.reduce(axis=1)_longfloat.rst
+
+.. _numpy.all_fast:
+
+numpy.all_fast
+--------------
+.. include:: vbench/numpy.all_fast.rst
+
+.. _numpy.all_slow:
+
+numpy.all_slow
+--------------
+.. include:: vbench/numpy.all_slow.rst
+
+.. _numpy.any_fast:
+
+numpy.any_fast
+--------------
+.. include:: vbench/numpy.any_fast.rst
+
+.. _numpy.any_slow:
+
+numpy.any_slow
+--------------
+.. include:: vbench/numpy.any_slow.rst
+
+.. _numpy.small_reduction:
+
+numpy.small_reduction
+---------------------
+.. include:: vbench/numpy.small_reduction.rst
+

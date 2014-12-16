@@ -1,0 +1,21 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    a = numpy.arange(60000.).reshape(150, 400)
+    b = numpy.arange(240000.).reshape(400, 600)
+    c = numpy.arange(600)
+    d = numpy.arange(400)
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.dot(d, numpy.dot(b, c))
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.dot_d__numpy.dot_b__c__.png
+   :width: 6in

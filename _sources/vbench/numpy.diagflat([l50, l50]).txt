@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    l50 = range(50);
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.diagflat([l50, l50])
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.diagflat__l50__l50__.png
+   :width: 6in

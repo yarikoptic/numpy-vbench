@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    d = numpy.ones(20000, dtype=numpy.float32)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.add(d, 1)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.add_scalar2_numpy.float32.png
+   :width: 6in

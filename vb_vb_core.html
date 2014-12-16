@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>vb_core &mdash; Vbench performance benchmarks for NumPy</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.6.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Vbench performance benchmarks for NumPy" href="index.html" />
+    <link rel="next" title="vb_function_base" href="vb_vb_function_base.html" />
+    <link rel="prev" title="vb_app" href="vb_vb_app.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <h1><a href="index.html">Vbench performance benchmarks for NumPy</a></h1>
+        <div class="rel">
+          <a href="vb_vb_app.html" title="vb_app"
+             accesskey="P">previous</a> |
+          <a href="vb_vb_function_base.html" title="vb_function_base"
+             accesskey="N">next</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_app.html">vb_app</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">vb_core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-arange-100">numpy.arange(100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-array-1">numpy.array(1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">numpy.array([1])</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-array">numpy.array([])</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-array-l">numpy.array(l)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-array-l100">numpy.array(l100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-diag-l100">numpy.diag(l100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-diagflat-l50-l50">numpy.diagflat([l50, l50])</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-diagflat-l100">numpy.diagflat(l100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-dstack-l">numpy.dstack(l)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-empty-100">numpy.empty(100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-eye-100">numpy.eye(100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-eye-3000">numpy.eye(3000)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-hstack-l">numpy.hstack(l)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-identity-100">numpy.identity(100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-identity-3000">numpy.identity(3000)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-ma-masked-array">numpy.ma.masked_array()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-ma-masked-array-l100">numpy.ma.masked_array(l100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-ma-masked-array-l100-t100">numpy.ma.masked_array(l100,t100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-ones-100">numpy.ones(100)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-tril-l10x10">numpy.tril(l10x10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-triu-l10x10">numpy.triu(l10x10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-vstack-l">numpy.vstack(l)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#numpy-zeros-100">numpy.zeros(100)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_function_base.html">vb_function_base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_indexing.html">vb_indexing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_io.html">vb_io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_linalg.html">vb_linalg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_random.html">vb_random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_reduce.html">vb_reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_ufunc.html">vb_ufunc</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" size="18" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+		  <p>
+		  <p>
+			<script type="text/javascript" src="http://www.ohloh.net/p/482908/widgets/project_partner_badge.js"></script>
+	      </p>
+        </div>
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="vb-core">
+<h1>vb_core<a class="headerlink" href="#vb-core" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="numpy-arange-100">
+<span id="id1"></span><h2>numpy.arange(100)<a class="headerlink" href="#numpy-arange-100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.arange_100_.png" src="_images/numpy.arange_100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-array-1">
+<span id="id2"></span><h2>numpy.array(1)<a class="headerlink" href="#numpy-array-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.array_1_.png" src="_images/numpy.array_1_.png" style="width: 6in;" />
+</div>
+<div class="section" id="id3">
+<span id="id4"></span><h2>numpy.array([1])<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.array__1__.png" src="_images/numpy.array__1__.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-array">
+<span id="id5"></span><h2>numpy.array([])<a class="headerlink" href="#numpy-array" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.array____.png" src="_images/numpy.array____.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-array-l">
+<span id="id6"></span><h2>numpy.array(l)<a class="headerlink" href="#numpy-array-l" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)];</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.array_l_.png" src="_images/numpy.array_l_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-array-l100">
+<span id="id7"></span><h2>numpy.array(l100)<a class="headerlink" href="#numpy-array-l100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l100</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">l100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.array_l100_.png" src="_images/numpy.array_l100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-diag-l100">
+<span id="id8"></span><h2>numpy.diag(l100)<a class="headerlink" href="#numpy-diag-l100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l100</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">l100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.diag_l100_.png" src="_images/numpy.diag_l100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-diagflat-l50-l50">
+<span id="id9"></span><h2>numpy.diagflat([l50, l50])<a class="headerlink" href="#numpy-diagflat-l50-l50" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l50</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">diagflat</span><span class="p">([</span><span class="n">l50</span><span class="p">,</span> <span class="n">l50</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.diagflat__l50__l50__.png" src="_images/numpy.diagflat__l50__l50__.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-diagflat-l100">
+<span id="id10"></span><h2>numpy.diagflat(l100)<a class="headerlink" href="#numpy-diagflat-l100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l100</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">diagflat</span><span class="p">(</span><span class="n">l100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.diagflat_l100_.png" src="_images/numpy.diagflat_l100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-dstack-l">
+<span id="id11"></span><h2>numpy.dstack(l)<a class="headerlink" href="#numpy-dstack-l" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)];</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">dstack</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.dstack_l_.png" src="_images/numpy.dstack_l_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-empty-100">
+<span id="id12"></span><h2>numpy.empty(100)<a class="headerlink" href="#numpy-empty-100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.empty_100_.png" src="_images/numpy.empty_100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-eye-100">
+<span id="id13"></span><h2>numpy.eye(100)<a class="headerlink" href="#numpy-eye-100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.eye_100_.png" src="_images/numpy.eye_100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-eye-3000">
+<span id="id14"></span><h2>numpy.eye(3000)<a class="headerlink" href="#numpy-eye-3000" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.eye_3000_.png" src="_images/numpy.eye_3000_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-hstack-l">
+<span id="id15"></span><h2>numpy.hstack(l)<a class="headerlink" href="#numpy-hstack-l" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)];</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.hstack_l_.png" src="_images/numpy.hstack_l_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-identity-100">
+<span id="id16"></span><h2>numpy.identity(100)<a class="headerlink" href="#numpy-identity-100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.identity_100_.png" src="_images/numpy.identity_100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-identity-3000">
+<span id="id17"></span><h2>numpy.identity(3000)<a class="headerlink" href="#numpy-identity-3000" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.identity_3000_.png" src="_images/numpy.identity_3000_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-ma-masked-array">
+<span id="id18"></span><h2>numpy.ma.masked_array()<a class="headerlink" href="#numpy-ma-masked-array" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_array</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.ma.masked_array__.png" src="_images/numpy.ma.masked_array__.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-ma-masked-array-l100">
+<span id="id19"></span><h2>numpy.ma.masked_array(l100)<a class="headerlink" href="#numpy-ma-masked-array-l100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l100</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_array</span><span class="p">(</span><span class="n">l100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.ma.masked_array_l100_.png" src="_images/numpy.ma.masked_array_l100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-ma-masked-array-l100-t100">
+<span id="id20"></span><h2>numpy.ma.masked_array(l100,t100)<a class="headerlink" href="#numpy-ma-masked-array-l100-t100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l100</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="n">t100</span><span class="o">=</span><span class="p">[</span><span class="bp">True</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_array</span><span class="p">(</span><span class="n">l100</span><span class="p">,</span><span class="n">t100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.ma.masked_array_l100_t100_.png" src="_images/numpy.ma.masked_array_l100_t100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-ones-100">
+<span id="id21"></span><h2>numpy.ones(100)<a class="headerlink" href="#numpy-ones-100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.ones_100_.png" src="_images/numpy.ones_100_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-tril-l10x10">
+<span id="id22"></span><h2>numpy.tril(l10x10)<a class="headerlink" href="#numpy-tril-l10x10" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l10x10</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">tril</span><span class="p">(</span><span class="n">l10x10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.tril_l10x10_.png" src="_images/numpy.tril_l10x10_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-triu-l10x10">
+<span id="id23"></span><h2>numpy.triu(l10x10)<a class="headerlink" href="#numpy-triu-l10x10" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l10x10</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">l10x10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.triu_l10x10_.png" src="_images/numpy.triu_l10x10_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-vstack-l">
+<span id="id24"></span><h2>numpy.vstack(l)<a class="headerlink" href="#numpy-vstack-l" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)];</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.vstack_l_.png" src="_images/numpy.vstack_l_.png" style="width: 6in;" />
+</div>
+<div class="section" id="numpy-zeros-100">
+<span id="id25"></span><h2>numpy.zeros(100)<a class="headerlink" href="#numpy-zeros-100" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">numpy</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/numpy.zeros_100_.png" src="_images/numpy.zeros_100_.png" style="width: 6in;" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="vb_vb_app.html" title="vb_app"
+             >previous</a> |
+          <a href="vb_vb_function_base.html" title="vb_function_base"
+             >next</a> |
+          <a href="genindex.html" title="General Index"
+             >index</a>
+            <br/>
+            <a href="_sources/vb_vb_core.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2013, the NumPy development team.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

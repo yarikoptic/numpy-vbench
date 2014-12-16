@@ -1,0 +1,19 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    d = numpy.ones((50000, 100), dtype=numpy.float64)
+    e = numpy.ones((100,), dtype=numpy.float64)
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    d - e
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.broadcast.png
+   :width: 6in

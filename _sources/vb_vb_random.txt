@@ -1,0 +1,40 @@
+vb_random
+=========
+
+
+.. _numpy.random.binomial_10_0.5__size=_100_100__:
+
+numpy.random.binomial(10,0.5, size=(100,100))
+---------------------------------------------
+.. include:: vbench/numpy.random.binomial(10,0.5, size=(100,100)).rst
+
+.. _numpy.random.normal_size=_100_100__:
+
+numpy.random.normal(size=(100,100))
+-----------------------------------
+.. include:: vbench/numpy.random.normal(size=(100,100)).rst
+
+.. _numpy.random.poisson_10_size=_100_100__:
+
+numpy.random.poisson(10,size=(100,100))
+---------------------------------------
+.. include:: vbench/numpy.random.poisson(10,size=(100,100)).rst
+
+.. _numpy.random.uniform_size=_100_100__:
+
+numpy.random.uniform(size=(100,100))
+------------------------------------
+.. include:: vbench/numpy.random.uniform(size=(100,100)).rst
+
+.. _numpy.random.weibull_1__size=_100_100__:
+
+numpy.random.weibull(1, size=(100,100))
+---------------------------------------
+.. include:: vbench/numpy.random.weibull(1, size=(100,100)).rst
+
+.. _vb_random_shuffle100000:
+
+vb_random_shuffle100000
+-----------------------
+.. include:: vbench/vb_random_shuffle100000.rst
+

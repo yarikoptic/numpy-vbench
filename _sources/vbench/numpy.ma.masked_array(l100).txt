@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    l100 = range(100);
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.ma.masked_array(l100)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.ma.masked_array_l100_.png
+   :width: 6in

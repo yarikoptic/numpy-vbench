@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.array([])
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.array____.png
+   :width: 6in

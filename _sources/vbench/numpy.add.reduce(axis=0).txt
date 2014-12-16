@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    [numpy.add.reduce(a, axis=0) for a in squares.itervalues()]
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.add.reduce_axis=0_.png
+   :width: 6in

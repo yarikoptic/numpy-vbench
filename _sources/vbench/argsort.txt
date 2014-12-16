@@ -1,0 +1,19 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy as np
+    e = np.arange(10000, dtype=np.float32)
+    o = np.arange(10001, dtype=np.float32)
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    e.argsort()
+
+**Performance graph**
+
+.. image:: vbench/figures/argsort.png
+   :width: 6in

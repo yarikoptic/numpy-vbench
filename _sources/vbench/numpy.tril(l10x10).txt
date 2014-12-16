@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    l10x10 = numpy.ones((10,10));
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.tril(l10x10)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.tril_l10x10_.png
+   :width: 6in

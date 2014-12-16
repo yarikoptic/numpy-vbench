@@ -1,0 +1,112 @@
+vb_function_base
+================
+
+
+.. _argsort:
+
+argsort
+-------
+.. include:: vbench/argsort.rst
+
+.. _bincount:
+
+bincount
+--------
+.. include:: vbench/bincount.rst
+
+.. _bincount_weights:
+
+bincount_weights
+----------------
+.. include:: vbench/bincount_weights.rst
+
+.. _median_even:
+
+median_even
+-----------
+.. include:: vbench/median_even.rst
+
+.. _median_even_inplace:
+
+median_even_inplace
+-------------------
+.. include:: vbench/median_even_inplace.rst
+
+.. _median_even_small:
+
+median_even_small
+-----------------
+.. include:: vbench/median_even_small.rst
+
+.. _median_odd:
+
+median_odd
+----------
+.. include:: vbench/median_odd.rst
+
+.. _median_odd_inplace:
+
+median_odd_inplace
+------------------
+.. include:: vbench/median_odd_inplace.rst
+
+.. _median_odd_small:
+
+median_odd_small
+----------------
+.. include:: vbench/median_odd_small.rst
+
+.. _percentile:
+
+percentile
+----------
+.. include:: vbench/percentile.rst
+
+.. _quartile:
+
+quartile
+--------
+.. include:: vbench/quartile.rst
+
+.. _select:
+
+select
+------
+.. include:: vbench/select.rst
+
+.. _select_larger:
+
+select_larger
+-------------
+.. include:: vbench/select_larger.rst
+
+.. _sort:
+
+sort
+----
+.. include:: vbench/sort.rst
+
+.. _sort_inplace:
+
+sort_inplace
+------------
+.. include:: vbench/sort_inplace.rst
+
+.. _where_1:
+
+where_1
+-------
+.. include:: vbench/where_1.rst
+
+.. _where_2:
+
+where_2
+-------
+.. include:: vbench/where_2.rst
+
+.. _where_2_broadcast:
+
+where_2_broadcast
+-----------------
+.. include:: vbench/where_2_broadcast.rst
+

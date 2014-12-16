@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    d = numpy.ones(20000, dtype=numpy.bool)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    d & d
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.and_bool.png
+   :width: 6in

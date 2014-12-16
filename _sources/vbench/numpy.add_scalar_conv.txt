@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    x = numpy.asarray(1.0)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    x+1.
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.add_scalar_conv.png
+   :width: 6in

@@ -1,0 +1,16 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    d = np.arange(80000, dtype=np.intp)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    np.bincount(d)
+
+**Performance graph**
+
+.. image:: vbench/figures/bincount.png
+   :width: 6in

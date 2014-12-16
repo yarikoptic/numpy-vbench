@@ -1,0 +1,20 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import tempfile
+    from numpy import memmap, float32, array
+    fp = memmap(tempfile.NamedTemporaryFile(), dtype=float32, mode='w+', shape=(50,60))
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    for i in range(1000):
+         fp[5:10]
+    
+
+**Performance graph**
+
+.. image:: vbench/figures/mmap_slicing.png
+   :width: 6in

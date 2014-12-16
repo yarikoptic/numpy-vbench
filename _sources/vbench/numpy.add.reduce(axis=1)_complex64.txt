@@ -1,0 +1,18 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    
+    a = squares['complex64']
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.add.reduce(a, axis=1)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.add.reduce_axis=1__complex64.png
+   :width: 6in

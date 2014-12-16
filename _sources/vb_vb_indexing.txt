@@ -1,0 +1,88 @@
+vb_indexing
+===========
+
+
+.. _a___indexes__:
+
+a[:,indexes_]
+-------------
+.. include:: vbench/a[:,indexes_].rst
+
+.. _a___indexes__=1:
+
+a[:,indexes_]=1
+---------------
+.. include:: vbench/a[:,indexes_]=1.rst
+
+.. _a___indexes_rand__:
+
+a[:,indexes_rand_]
+------------------
+.. include:: vbench/a[:,indexes_rand_].rst
+
+.. _a___indexes_rand__=1:
+
+a[:,indexes_rand_]=1
+--------------------
+.. include:: vbench/a[:,indexes_rand_]=1.rst
+
+.. _a_indexes__:
+
+a[indexes_]
+-----------
+.. include:: vbench/a[indexes_].rst
+
+.. _a_indexes__=1:
+
+a[indexes_]=1
+-------------
+.. include:: vbench/a[indexes_]=1.rst
+
+.. _a_indexes_rand__:
+
+a[indexes_rand_]
+----------------
+.. include:: vbench/a[indexes_rand_].rst
+
+.. _a_indexes_rand__=1:
+
+a[indexes_rand_]=1
+------------------
+.. include:: vbench/a[indexes_rand_]=1.rst
+
+.. _a_np.ix__indexes___indexes___:
+
+a[np.ix_(indexes_, indexes_)]
+-----------------------------
+.. include:: vbench/a[np.ix_(indexes_, indexes_)].rst
+
+.. _a_np.ix__indexes___indexes___=1:
+
+a[np.ix_(indexes_, indexes_)]=1
+-------------------------------
+.. include:: vbench/a[np.ix_(indexes_, indexes_)]=1.rst
+
+.. _a_np.ix__indexes_rand___indexes_rand___:
+
+a[np.ix_(indexes_rand_, indexes_rand_)]
+---------------------------------------
+.. include:: vbench/a[np.ix_(indexes_rand_, indexes_rand_)].rst
+
+.. _a_np.ix__indexes_rand___indexes_rand___=1:
+
+a[np.ix_(indexes_rand_, indexes_rand_)]=1
+-----------------------------------------
+.. include:: vbench/a[np.ix_(indexes_rand_, indexes_rand_)]=1.rst
+
+.. _mmap_fancy_indexing:
+
+mmap_fancy_indexing
+-------------------
+.. include:: vbench/mmap_fancy_indexing.rst
+
+.. _mmap_slicing:
+
+mmap_slicing
+------------
+.. include:: vbench/mmap_slicing.rst
+

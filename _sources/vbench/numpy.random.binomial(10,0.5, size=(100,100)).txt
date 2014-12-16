@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.random.binomial(10,0.5, size=(100,100))
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.random.binomial_10_0.5__size=_100_100__.png
+   :width: 6in

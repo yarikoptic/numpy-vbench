@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    l = [numpy.arange(1000), numpy.arange(1000)];
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.hstack(l)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.hstack_l_.png
+   :width: 6in

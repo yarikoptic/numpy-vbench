@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    d = numpy.zeros(100000, numpy.bool)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    d.any()
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.any_slow.png
+   :width: 6in

@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    a=squares_['float32']
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.linalg.det(a)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.linalg.det_a__float32.png
+   :width: 6in

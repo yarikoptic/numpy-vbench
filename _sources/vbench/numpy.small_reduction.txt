@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    d = numpy.ones(100, dtype=numpy.float32)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.sum(d)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.small_reduction.png
+   :width: 6in

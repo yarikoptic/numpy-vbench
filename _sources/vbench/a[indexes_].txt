@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    for a in squares_.itervalues(): a[indexes_]
+
+**Performance graph**
+
+.. image:: vbench/figures/a_indexes__.png
+   :width: 6in

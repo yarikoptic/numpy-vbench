@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.arange(100)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.arange_100_.png
+   :width: 6in

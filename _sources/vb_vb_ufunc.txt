@@ -1,0 +1,604 @@
+vb_ufunc
+========
+
+
+.. _numpy.abs_a__10types:
+
+numpy.abs(a)_10types
+--------------------
+.. include:: vbench/numpy.abs(a)_10types.rst
+
+.. _numpy.absolute_a__10types:
+
+numpy.absolute(a)_10types
+-------------------------
+.. include:: vbench/numpy.absolute(a)_10types.rst
+
+.. _numpy.add_a_a__10types:
+
+numpy.add(a,a)_10types
+----------------------
+.. include:: vbench/numpy.add(a,a)_10types.rst
+
+.. _numpy.add_scalar:
+
+numpy.add_scalar
+----------------
+.. include:: vbench/numpy.add_scalar.rst
+
+.. _numpy.add_scalar2_numpy.float32:
+
+numpy.add_scalar2_numpy.float32
+-------------------------------
+.. include:: vbench/numpy.add_scalar2_numpy.float32.rst
+
+.. _numpy.add_scalar2_numpy.float64:
+
+numpy.add_scalar2_numpy.float64
+-------------------------------
+.. include:: vbench/numpy.add_scalar2_numpy.float64.rst
+
+.. _numpy.add_scalar_conv:
+
+numpy.add_scalar_conv
+---------------------
+.. include:: vbench/numpy.add_scalar_conv.rst
+
+.. _numpy.add_scalar_conv_complex:
+
+numpy.add_scalar_conv_complex
+-----------------------------
+.. include:: vbench/numpy.add_scalar_conv_complex.rst
+
+.. _numpy.and_bool:
+
+numpy.and_bool
+--------------
+.. include:: vbench/numpy.and_bool.rst
+
+.. _numpy.arccos_a__10types:
+
+numpy.arccos(a)_10types
+-----------------------
+.. include:: vbench/numpy.arccos(a)_10types.rst
+
+.. _numpy.arccosh_a__10types:
+
+numpy.arccosh(a)_10types
+------------------------
+.. include:: vbench/numpy.arccosh(a)_10types.rst
+
+.. _numpy.arcsin_a__10types:
+
+numpy.arcsin(a)_10types
+-----------------------
+.. include:: vbench/numpy.arcsin(a)_10types.rst
+
+.. _numpy.arcsinh_a__10types:
+
+numpy.arcsinh(a)_10types
+------------------------
+.. include:: vbench/numpy.arcsinh(a)_10types.rst
+
+.. _numpy.arctan_a__10types:
+
+numpy.arctan(a)_10types
+-----------------------
+.. include:: vbench/numpy.arctan(a)_10types.rst
+
+.. _numpy.arctan2_a_a__7types:
+
+numpy.arctan2(a,a)_7types
+-------------------------
+.. include:: vbench/numpy.arctan2(a,a)_7types.rst
+
+.. _numpy.arctanh_a__10types:
+
+numpy.arctanh(a)_10types
+------------------------
+.. include:: vbench/numpy.arctanh(a)_10types.rst
+
+.. _numpy.bitwise_and_a_a__3types:
+
+numpy.bitwise_and(a,a)_3types
+-----------------------------
+.. include:: vbench/numpy.bitwise_and(a,a)_3types.rst
+
+.. _numpy.bitwise_not_a__3types:
+
+numpy.bitwise_not(a)_3types
+---------------------------
+.. include:: vbench/numpy.bitwise_not(a)_3types.rst
+
+.. _numpy.bitwise_or_a_a__3types:
+
+numpy.bitwise_or(a,a)_3types
+----------------------------
+.. include:: vbench/numpy.bitwise_or(a,a)_3types.rst
+
+.. _numpy.bitwise_xor_a_a__3types:
+
+numpy.bitwise_xor(a,a)_3types
+-----------------------------
+.. include:: vbench/numpy.bitwise_xor(a,a)_3types.rst
+
+.. _numpy.broadcast:
+
+numpy.broadcast
+---------------
+.. include:: vbench/numpy.broadcast.rst
+
+.. _numpy.ceil_a__7types:
+
+numpy.ceil(a)_7types
+--------------------
+.. include:: vbench/numpy.ceil(a)_7types.rst
+
+.. _numpy.conj_a__10types:
+
+numpy.conj(a)_10types
+---------------------
+.. include:: vbench/numpy.conj(a)_10types.rst
+
+.. _numpy.conjugate_a__10types:
+
+numpy.conjugate(a)_10types
+--------------------------
+.. include:: vbench/numpy.conjugate(a)_10types.rst
+
+.. _numpy.copysign_a_a__7types:
+
+numpy.copysign(a,a)_7types
+--------------------------
+.. include:: vbench/numpy.copysign(a,a)_7types.rst
+
+.. _numpy.cos_a__10types:
+
+numpy.cos(a)_10types
+--------------------
+.. include:: vbench/numpy.cos(a)_10types.rst
+
+.. _numpy.cosh_a__10types:
+
+numpy.cosh(a)_10types
+---------------------
+.. include:: vbench/numpy.cosh(a)_10types.rst
+
+.. _numpy.count_nonzero:
+
+numpy.count_nonzero
+-------------------
+.. include:: vbench/numpy.count_nonzero.rst
+
+.. _numpy.deg2rad_a__7types:
+
+numpy.deg2rad(a)_7types
+-----------------------
+.. include:: vbench/numpy.deg2rad(a)_7types.rst
+
+.. _numpy.degrees_a__7types:
+
+numpy.degrees(a)_7types
+-----------------------
+.. include:: vbench/numpy.degrees(a)_7types.rst
+
+.. _numpy.divide_a_a__10types:
+
+numpy.divide(a,a)_10types
+-------------------------
+.. include:: vbench/numpy.divide(a,a)_10types.rst
+
+.. _numpy.divide_scalar2_inplace_numpy.float32:
+
+numpy.divide_scalar2_inplace_numpy.float32
+------------------------------------------
+.. include:: vbench/numpy.divide_scalar2_inplace_numpy.float32.rst
+
+.. _numpy.divide_scalar2_inplace_numpy.float64:
+
+numpy.divide_scalar2_inplace_numpy.float64
+------------------------------------------
+.. include:: vbench/numpy.divide_scalar2_inplace_numpy.float64.rst
+
+.. _numpy.divide_scalar2_numpy.float32:
+
+numpy.divide_scalar2_numpy.float32
+----------------------------------
+.. include:: vbench/numpy.divide_scalar2_numpy.float32.rst
+
+.. _numpy.divide_scalar2_numpy.float64:
+
+numpy.divide_scalar2_numpy.float64
+----------------------------------
+.. include:: vbench/numpy.divide_scalar2_numpy.float64.rst
+
+.. _numpy.equal_a_a__10types:
+
+numpy.equal(a,a)_10types
+------------------------
+.. include:: vbench/numpy.equal(a,a)_10types.rst
+
+.. _numpy.exp_a__10types:
+
+numpy.exp(a)_10types
+--------------------
+.. include:: vbench/numpy.exp(a)_10types.rst
+
+.. _numpy.exp2_a__10types:
+
+numpy.exp2(a)_10types
+---------------------
+.. include:: vbench/numpy.exp2(a)_10types.rst
+
+.. _numpy.expm1_a__10types:
+
+numpy.expm1(a)_10types
+----------------------
+.. include:: vbench/numpy.expm1(a)_10types.rst
+
+.. _numpy.fabs_a__7types:
+
+numpy.fabs(a)_7types
+--------------------
+.. include:: vbench/numpy.fabs(a)_7types.rst
+
+.. _numpy.floor_a__7types:
+
+numpy.floor(a)_7types
+---------------------
+.. include:: vbench/numpy.floor(a)_7types.rst
+
+.. _numpy.floor_divide_a_a__10types:
+
+numpy.floor_divide(a,a)_10types
+-------------------------------
+.. include:: vbench/numpy.floor_divide(a,a)_10types.rst
+
+.. _numpy.fmax_a_a__10types:
+
+numpy.fmax(a,a)_10types
+-----------------------
+.. include:: vbench/numpy.fmax(a,a)_10types.rst
+
+.. _numpy.fmin_a_a__10types:
+
+numpy.fmin(a,a)_10types
+-----------------------
+.. include:: vbench/numpy.fmin(a,a)_10types.rst
+
+.. _numpy.fmod_a_a__7types:
+
+numpy.fmod(a,a)_7types
+----------------------
+.. include:: vbench/numpy.fmod(a,a)_7types.rst
+
+.. _numpy.frexp_a__7types:
+
+numpy.frexp(a)_7types
+---------------------
+.. include:: vbench/numpy.frexp(a)_7types.rst
+
+.. _numpy.greater_a_a__10types:
+
+numpy.greater(a,a)_10types
+--------------------------
+.. include:: vbench/numpy.greater(a,a)_10types.rst
+
+.. _numpy.greater_equal_a_a__10types:
+
+numpy.greater_equal(a,a)_10types
+--------------------------------
+.. include:: vbench/numpy.greater_equal(a,a)_10types.rst
+
+.. _numpy.hypot_a_a__7types:
+
+numpy.hypot(a,a)_7types
+-----------------------
+.. include:: vbench/numpy.hypot(a,a)_7types.rst
+
+.. _numpy.invert_a__3types:
+
+numpy.invert(a)_3types
+----------------------
+.. include:: vbench/numpy.invert(a)_3types.rst
+
+.. _numpy.isfinite_a__10types:
+
+numpy.isfinite(a)_10types
+-------------------------
+.. include:: vbench/numpy.isfinite(a)_10types.rst
+
+.. _numpy.isinf_a__10types:
+
+numpy.isinf(a)_10types
+----------------------
+.. include:: vbench/numpy.isinf(a)_10types.rst
+
+.. _numpy.isnan_a__10types:
+
+numpy.isnan(a)_10types
+----------------------
+.. include:: vbench/numpy.isnan(a)_10types.rst
+
+.. _numpy.ldexp_a_a__3types:
+
+numpy.ldexp(a,a)_3types
+-----------------------
+.. include:: vbench/numpy.ldexp(a,a)_3types.rst
+
+.. _numpy.left_shift_a_a__3types:
+
+numpy.left_shift(a,a)_3types
+----------------------------
+.. include:: vbench/numpy.left_shift(a,a)_3types.rst
+
+.. _numpy.less_a_a__10types:
+
+numpy.less(a,a)_10types
+-----------------------
+.. include:: vbench/numpy.less(a,a)_10types.rst
+
+.. _numpy.less_equal_a_a__10types:
+
+numpy.less_equal(a,a)_10types
+-----------------------------
+.. include:: vbench/numpy.less_equal(a,a)_10types.rst
+
+.. _numpy.less_than_scalar2_numpy.float32:
+
+numpy.less_than_scalar2_numpy.float32
+-------------------------------------
+.. include:: vbench/numpy.less_than_scalar2_numpy.float32.rst
+
+.. _numpy.less_than_scalar2_numpy.float64:
+
+numpy.less_than_scalar2_numpy.float64
+-------------------------------------
+.. include:: vbench/numpy.less_than_scalar2_numpy.float64.rst
+
+.. _numpy.log_a__10types:
+
+numpy.log(a)_10types
+--------------------
+.. include:: vbench/numpy.log(a)_10types.rst
+
+.. _numpy.log10_a__10types:
+
+numpy.log10(a)_10types
+----------------------
+.. include:: vbench/numpy.log10(a)_10types.rst
+
+.. _numpy.log1p_a__10types:
+
+numpy.log1p(a)_10types
+----------------------
+.. include:: vbench/numpy.log1p(a)_10types.rst
+
+.. _numpy.log2_a__10types:
+
+numpy.log2(a)_10types
+---------------------
+.. include:: vbench/numpy.log2(a)_10types.rst
+
+.. _numpy.logaddexp_a_a__7types:
+
+numpy.logaddexp(a,a)_7types
+---------------------------
+.. include:: vbench/numpy.logaddexp(a,a)_7types.rst
+
+.. _numpy.logaddexp2_a_a__7types:
+
+numpy.logaddexp2(a,a)_7types
+----------------------------
+.. include:: vbench/numpy.logaddexp2(a,a)_7types.rst
+
+.. _numpy.logical_and_a_a__10types:
+
+numpy.logical_and(a,a)_10types
+------------------------------
+.. include:: vbench/numpy.logical_and(a,a)_10types.rst
+
+.. _numpy.logical_not_a__10types:
+
+numpy.logical_not(a)_10types
+----------------------------
+.. include:: vbench/numpy.logical_not(a)_10types.rst
+
+.. _numpy.logical_or_a_a__10types:
+
+numpy.logical_or(a,a)_10types
+-----------------------------
+.. include:: vbench/numpy.logical_or(a,a)_10types.rst
+
+.. _numpy.logical_xor_a_a__10types:
+
+numpy.logical_xor(a,a)_10types
+------------------------------
+.. include:: vbench/numpy.logical_xor(a,a)_10types.rst
+
+.. _numpy.maximum_a_a__10types:
+
+numpy.maximum(a,a)_10types
+--------------------------
+.. include:: vbench/numpy.maximum(a,a)_10types.rst
+
+.. _numpy.minimum_a_a__10types:
+
+numpy.minimum(a,a)_10types
+--------------------------
+.. include:: vbench/numpy.minimum(a,a)_10types.rst
+
+.. _numpy.mod_a_a__7types:
+
+numpy.mod(a,a)_7types
+---------------------
+.. include:: vbench/numpy.mod(a,a)_7types.rst
+
+.. _numpy.modf_a__7types:
+
+numpy.modf(a)_7types
+--------------------
+.. include:: vbench/numpy.modf(a)_7types.rst
+
+.. _numpy.multiply_a_a__10types:
+
+numpy.multiply(a,a)_10types
+---------------------------
+.. include:: vbench/numpy.multiply(a,a)_10types.rst
+
+.. _numpy.negative_a__10types:
+
+numpy.negative(a)_10types
+-------------------------
+.. include:: vbench/numpy.negative(a)_10types.rst
+
+.. _numpy.nextafter_a_a__7types:
+
+numpy.nextafter(a,a)_7types
+---------------------------
+.. include:: vbench/numpy.nextafter(a,a)_7types.rst
+
+.. _numpy.nonzero:
+
+numpy.nonzero
+-------------
+.. include:: vbench/numpy.nonzero.rst
+
+.. _numpy.not_bool:
+
+numpy.not_bool
+--------------
+.. include:: vbench/numpy.not_bool.rst
+
+.. _numpy.not_equal_a_a__10types:
+
+numpy.not_equal(a,a)_10types
+----------------------------
+.. include:: vbench/numpy.not_equal(a,a)_10types.rst
+
+.. _numpy.ones_like_a__10types:
+
+numpy.ones_like(a)_10types
+--------------------------
+.. include:: vbench/numpy.ones_like(a)_10types.rst
+
+.. _numpy.or_bool:
+
+numpy.or_bool
+-------------
+.. include:: vbench/numpy.or_bool.rst
+
+.. _numpy.power_a_a__10types:
+
+numpy.power(a,a)_10types
+------------------------
+.. include:: vbench/numpy.power(a,a)_10types.rst
+
+.. _numpy.rad2deg_a__7types:
+
+numpy.rad2deg(a)_7types
+-----------------------
+.. include:: vbench/numpy.rad2deg(a)_7types.rst
+
+.. _numpy.radians_a__7types:
+
+numpy.radians(a)_7types
+-----------------------
+.. include:: vbench/numpy.radians(a)_7types.rst
+
+.. _numpy.reciprocal_a__10types:
+
+numpy.reciprocal(a)_10types
+---------------------------
+.. include:: vbench/numpy.reciprocal(a)_10types.rst
+
+.. _numpy.remainder_a_a__7types:
+
+numpy.remainder(a,a)_7types
+---------------------------
+.. include:: vbench/numpy.remainder(a,a)_7types.rst
+
+.. _numpy.right_shift_a_a__3types:
+
+numpy.right_shift(a,a)_3types
+-----------------------------
+.. include:: vbench/numpy.right_shift(a,a)_3types.rst
+
+.. _numpy.rint_a__10types:
+
+numpy.rint(a)_10types
+---------------------
+.. include:: vbench/numpy.rint(a)_10types.rst
+
+.. _numpy.sign_a__10types:
+
+numpy.sign(a)_10types
+---------------------
+.. include:: vbench/numpy.sign(a)_10types.rst
+
+.. _numpy.signbit_a__7types:
+
+numpy.signbit(a)_7types
+-----------------------
+.. include:: vbench/numpy.signbit(a)_7types.rst
+
+.. _numpy.sin_a__10types:
+
+numpy.sin(a)_10types
+--------------------
+.. include:: vbench/numpy.sin(a)_10types.rst
+
+.. _numpy.sinh_a__10types:
+
+numpy.sinh(a)_10types
+---------------------
+.. include:: vbench/numpy.sinh(a)_10types.rst
+
+.. _numpy.spacing_a__7types:
+
+numpy.spacing(a)_7types
+-----------------------
+.. include:: vbench/numpy.spacing(a)_7types.rst
+
+.. _numpy.sqrt_a__10types:
+
+numpy.sqrt(a)_10types
+---------------------
+.. include:: vbench/numpy.sqrt(a)_10types.rst
+
+.. _numpy.square_a__10types:
+
+numpy.square(a)_10types
+-----------------------
+.. include:: vbench/numpy.square(a)_10types.rst
+
+.. _numpy.subtract_a_a__10types:
+
+numpy.subtract(a,a)_10types
+---------------------------
+.. include:: vbench/numpy.subtract(a,a)_10types.rst
+
+.. _numpy.tan_a__10types:
+
+numpy.tan(a)_10types
+--------------------
+.. include:: vbench/numpy.tan(a)_10types.rst
+
+.. _numpy.tanh_a__10types:
+
+numpy.tanh(a)_10types
+---------------------
+.. include:: vbench/numpy.tanh(a)_10types.rst
+
+.. _numpy.true_divide_a_a__10types:
+
+numpy.true_divide(a,a)_10types
+------------------------------
+.. include:: vbench/numpy.true_divide(a,a)_10types.rst
+
+.. _numpy.trunc_a__7types:
+
+numpy.trunc(a)_7types
+---------------------
+.. include:: vbench/numpy.trunc(a)_7types.rst
+

@@ -1,0 +1,733 @@
+
+Benchmarks Performance Analysis
+===============================
+
+
+.. container:: benchmarks_analysis clear
+
+  .. list-table::
+     :header-rows: 1
+     :stub-columns: 1
+     :widths: 32 30 6 4 4 4 20
+
+     * - Benchmark
+       - Check
+       - Slowdown %
+       - Reference date
+       - Reference timing
+       - Target timing
+       - Possible recent
+     * - :ref:`numpy.add.reduce_axis=0__float16`
+       - ConsistentlyWorse(10)
+       - 189.1
+       - 2011.06.02
+       - 7
+       - 20
+       - `4e179f0...00a8c0c <https://github.com/numpy/numpy/compare/4e179f0...00a8c0c>`__
+     * - :ref:`numpy.any_fast`
+       - ConsistentlyWorse(10)
+       - 179.4
+       - 2011.03.29
+       - 0.0017
+       - 0.0047
+       - `0e091af...0625671 <https://github.com/numpy/numpy/compare/0e091af...0625671>`__
+     * - :ref:`numpy.all_fast`
+       - ConsistentlyWorse(10)
+       - 177.3
+       - 2011.03.29
+       - 0.0017
+       - 0.0047
+       - `f14d5e1...06440c1 <https://github.com/numpy/numpy/compare/f14d5e1...06440c1>`__
+     * - :ref:`numpy.small_reduction`
+       - ConsistentlyWorse(10)
+       - 84.6
+       - 2011.04.02
+       - 0.0024
+       - 0.0046
+       - `8bcb756...fb037eb <https://github.com/numpy/numpy/compare/8bcb756...fb037eb>`__
+     * - :ref:`median_odd_small`
+       - ConsistentlyWorse(10)
+       - 75.5
+       - 2011.03.18
+       - 0.018
+       - 0.031
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`median_even_small`
+       - ConsistentlyWorse(10)
+       - 74.3
+       - 2011.03.29
+       - 0.018
+       - 0.031
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`memcpy_int8`
+       - ConsistentlyWorse(10)
+       - 68.7
+       - 2011.04.02
+       - 0.0018
+       - 0.0024
+       - `fe0f6cc...7e8e7a2 <https://github.com/numpy/numpy/compare/fe0f6cc...7e8e7a2>`__
+     * - :ref:`numpy.identity_100_`
+       - ConsistentlyWorse(10)
+       - 52.2
+       - 2011.12.04
+       - 0.009
+       - 0.014
+       - `58350f4...cd0b8e7 <https://github.com/numpy/numpy/compare/58350f4...cd0b8e7>`__
+     * - :ref:`numpy.ones_100_`
+       - ConsistentlyWorse(10)
+       - 47.3
+       - 2011.04.02
+       - 0.002
+       - 0.0029
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.linalg.norm_a__float16`
+       - ConsistentlyWorse(10)
+       - 34.5
+       - 2014.11.19
+       - 0.11
+       - 0.13
+       - `a32625e...4083883 <https://github.com/numpy/numpy/compare/a32625e...4083883>`__
+     * - :ref:`numpy.ma.masked_array__`
+       - ConsistentlyWorse(10)
+       - 33.4
+       - 2014.08.04
+       - 0.022
+       - 0.028
+       - `e73ee5d...eb61066 <https://github.com/numpy/numpy/compare/e73ee5d...eb61066>`__
+     * - :ref:`strided_assign_complex128`
+       - ConsistentlyWorse(10)
+       - 33.2
+       - 2011.03.26
+       - 0.023
+       - 0.03
+       - `cfa095a...9671491 <https://github.com/numpy/numpy/compare/cfa095a...9671491>`__
+     * - :ref:`min_np.intp`
+       - ConsistentlyWorse(10)
+       - 32.3
+       - 2011.08.26
+       - 0.021
+       - 0.028
+       - `fb037eb...31b94e8 <https://github.com/numpy/numpy/compare/fb037eb...31b94e8>`__
+     * - :ref:`copyto_8_sparse`
+       - ConsistentlyWorse(10)
+       - 31.3
+       - 2011.08.26
+       - 0.15
+       - 0.22
+       - `e73ee5d...eb61066 <https://github.com/numpy/numpy/compare/e73ee5d...eb61066>`__
+     * - :ref:`numpy.tril_l10x10_`
+       - ConsistentlyWorse(10)
+       - 30.3
+       - 2014.02.15
+       - 0.015
+       - 0.019
+       - `7be18ed...3b22d87 <https://github.com/numpy/numpy/compare/7be18ed...3b22d87>`__
+     * - :ref:`numpy.vstack_l_`
+       - ConsistentlyWorse(10)
+       - 29.6
+       - 2011.04.02
+       - 0.007
+       - 0.0089
+       - `7be18ed...3b22d87 <https://github.com/numpy/numpy/compare/7be18ed...3b22d87>`__
+     * - :ref:`numpy.ma.masked_array_l100_t100_`
+       - ConsistentlyWorse(10)
+       - 24.1
+       - 2014.07.30
+       - 0.034
+       - 0.042
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.array_l_`
+       - ConsistentlyWorse(10)
+       - 21.9
+       - 2014.07.05
+       - 0.0027
+       - 0.0031
+       - `1657544...7be18ed <https://github.com/numpy/numpy/compare/1657544...7be18ed>`__
+     * - :ref:`sort_inplace`
+       - ConsistentlyWorse(10)
+       - 21.9
+       - 2011.03.29
+       - 0.13
+       - 0.15
+       - N/A
+     * - :ref:`a_np.ix__indexes___indexes___=1`
+       - ConsistentlyWorse(10)
+       - 20.9
+       - 2014.04.03
+       - 1.3
+       - 1.6
+       - `1657544...7be18ed <https://github.com/numpy/numpy/compare/1657544...7be18ed>`__
+     * - :ref:`sort`
+       - ConsistentlyWorse(10)
+       - 20.8
+       - 2011.03.29
+       - 0.14
+       - 0.15
+       - N/A
+     * - :ref:`a_np.ix__indexes_rand___indexes_rand___=1`
+       - ConsistentlyWorse(10)
+       - 20.3
+       - 2014.03.27
+       - 1.3
+       - 1.6
+       - `e73ee5d...eb61066 <https://github.com/numpy/numpy/compare/e73ee5d...eb61066>`__
+     * - :ref:`numpy.array__1__`
+       - ConsistentlyWorse(10)
+       - 18.9
+       - 2014.06.09
+       - 0.00099
+       - 0.0011
+       - `975267d...25aff4d <https://github.com/numpy/numpy/compare/975267d...25aff4d>`__
+     * - :ref:`numpy.ones_like_a__10types`
+       - ConsistentlyWorse(10)
+       - 18.6
+       - 2012.03.10
+       - 0.2
+       - 0.23
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.add.reduce_axis=1__int64`
+       - ConsistentlyWorse(10)
+       - 18.2
+       - 2011.07.06
+       - 2.1
+       - 2.5
+       - `23f20aa...68ffaec <https://github.com/numpy/numpy/compare/23f20aa...68ffaec>`__
+     * - :ref:`numpy.add.reduce_axis=1__int32`
+       - ConsistentlyWorse(10)
+       - 17.2
+       - 2014.11.19
+       - 1.7
+       - 2
+       - `975267d...25aff4d <https://github.com/numpy/numpy/compare/975267d...25aff4d>`__
+     * - :ref:`numpy.add.reduce_axis=1__longfloat`
+       - ConsistentlyWorse(10)
+       - 16.5
+       - 2011.06.09
+       - 4.8
+       - 5.5
+       - `e73ee5d...eb61066 <https://github.com/numpy/numpy/compare/e73ee5d...eb61066>`__
+     * - :ref:`numpy.arange_100_`
+       - ConsistentlyWorse(10)
+       - 15.5
+       - 2014.06.30
+       - 0.00077
+       - 0.00089
+       - `fb037eb...31b94e8 <https://github.com/numpy/numpy/compare/fb037eb...31b94e8>`__
+     * - :ref:`numpy.array____`
+       - ConsistentlyWorse(10)
+       - 14.2
+       - 2014.05.16
+       - 0.00076
+       - 0.00084
+       - `975267d...25aff4d <https://github.com/numpy/numpy/compare/975267d...25aff4d>`__
+     * - :ref:`numpy.not_bool`
+       - ConsistentlyWorse(10)
+       - 13.6
+       - 2014.10.20
+       - 0.0024
+       - 0.0028
+       - `b6903d7...029662b <https://github.com/numpy/numpy/compare/b6903d7...029662b>`__
+     * - :ref:`where_2_broadcast`
+       - ConsistentlyWorse(10)
+       - 10.5
+       - 2014.05.26
+       - 0.04
+       - 0.044
+       - `fe7816d...fb40fe8 <https://github.com/numpy/numpy/compare/fe7816d...fb40fe8>`__
+     * - :ref:`numpy.ldexp_a_a__3types`
+       - ConsistentlyWorse(10)
+       - 10.5
+       - 2014.05.26
+       - 0.57
+       - 0.63
+       - `a435de3...0e091af <https://github.com/numpy/numpy/compare/a435de3...0e091af>`__
+     * - :ref:`numpy.hstack_l_`
+       - ConsistentlyWorse(10)
+       - 10.2
+       - 2011.03.27
+       - 0.0068
+       - 0.0074
+       - `c7ad14f...fe0f6cc <https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc>`__
+     * - :ref:`numpy.right_shift_a_a__3types`
+       - ConsistentlyWorse(10)
+       - 9.8
+       - 2014.10.21
+       - 0.093
+       - 0.1
+       - `5eb6e36...6a4aa59 <https://github.com/numpy/numpy/compare/5eb6e36...6a4aa59>`__
+     * - :ref:`numpy.add.reduce_axis=0__int16`
+       - ConsistentlyWorse(10)
+       - 9.6
+       - 2014.10.21
+       - 1.7
+       - 1.9
+       - `8bcb756...fb037eb <https://github.com/numpy/numpy/compare/8bcb756...fb037eb>`__
+     * - :ref:`numpy.add.reduce_axis=0__int64`
+       - ConsistentlyWorse(10)
+       - 8.7
+       - 2014.10.21
+       - 2.3
+       - 2.5
+       - `e73ee5d...eb61066 <https://github.com/numpy/numpy/compare/e73ee5d...eb61066>`__
+     * - :ref:`bincount_weights`
+       - ConsistentlyWorse(10)
+       - 8.4
+       - 2014.03.16
+       - 0.43
+       - 0.47
+       - `68ffaec...8bcb756 <https://github.com/numpy/numpy/compare/68ffaec...8bcb756>`__
+     * - :ref:`where_2`
+       - ConsistentlyWorse(10)
+       - 7.7
+       - 2014.03.13
+       - 0.041
+       - 0.044
+       - `22ae193...e065a26 <https://github.com/numpy/numpy/compare/22ae193...e065a26>`__
+     * - :ref:`numpy.spacing_a__7types`
+       - ConsistentlyWorse(10)
+       - 7.6
+       - 2014.10.21
+       - 0.91
+       - 0.98
+       - `8e113c9...9636420 <https://github.com/numpy/numpy/compare/8e113c9...9636420>`__
+     * - :ref:`numpy.add.reduce_axis=1__float16`
+       - ConsistentlyWorse(10)
+       - 7.0
+       - 2014.03.30
+       - 5.1
+       - 5.6
+       - `53a202b...c2d7845 <https://github.com/numpy/numpy/compare/53a202b...c2d7845>`__
+     * - :ref:`numpy.einsum_'ijk_jil_>kl'__a__b_`
+       - ConsistentlyWorse(10)
+       - 6.9
+       - 2011.04.03
+       - 63
+       - 69
+       - `53a202b...c2d7845 <https://github.com/numpy/numpy/compare/53a202b...c2d7845>`__
+     * - :ref:`numpy.array_1_`
+       - ConsistentlyWorse(10)
+       - 6.8
+       - 2014.06.09
+       - 0.00043
+       - 0.00052
+       - `bd8d70a...3dfc6d6 <https://github.com/numpy/numpy/compare/bd8d70a...3dfc6d6>`__
+     * - :ref:`percentile`
+       - ConsistentlyWorse(10)
+       - 6.8
+       - 2014.10.21
+       - 0.099
+       - 0.11
+       - `22ae193...e065a26 <https://github.com/numpy/numpy/compare/22ae193...e065a26>`__
+     * - :ref:`cont_assign_int8`
+       - ConsistentlyWorse(10)
+       - 6.4
+       - 2014.06.08
+       - 0.0014
+       - 0.0015
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.less_than_scalar2_numpy.float32`
+       - ConsistentlyWorse(10)
+       - 6.1
+       - 2014.05.19
+       - 0.0074
+       - 0.0078
+       - `8cdc5f5...73d87a7 <https://github.com/numpy/numpy/compare/8cdc5f5...73d87a7>`__
+     * - :ref:`memcpy_complex128`
+       - ConsistentlyWorse(10)
+       - 5.9
+       - 2013.09.22
+       - 0.076
+       - 0.081
+       - `0d30aef...066be28 <https://github.com/numpy/numpy/compare/0d30aef...066be28>`__
+     * - :ref:`copyto_8_dense`
+       - ConsistentlyWorse(10)
+       - 5.1
+       - 2011.08.26
+       - 0.18
+       - 0.19
+       - `fb037eb...31b94e8 <https://github.com/numpy/numpy/compare/fb037eb...31b94e8>`__
+     * - :ref:`cont_assign_int16`
+       - ConsistentlyWorse(10)
+       - 5.1
+       - 2014.05.19
+       - 0.0036
+       - 0.0041
+       - `25aff4d...f14d5e1 <https://github.com/numpy/numpy/compare/25aff4d...f14d5e1>`__
+     * - :ref:`numpy.random.normal_size=_100_100__`
+       - ConsistentlyWorse(10)
+       - 5.0
+       - 2012.01.28
+       - 0.83
+       - 0.85
+       - `befb246...22ae193 <https://github.com/numpy/numpy/compare/befb246...22ae193>`__
+     * - :ref:`a_indexes__`
+       - ConsistentlyWorse(10)
+       - 5.0
+       - 2014.07.20
+       - 0.25
+       - 0.26
+       - `c7ad14f...fe0f6cc <https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc>`__
+     * - :ref:`numpy.empty_100_`
+       - ConsistentlyWorse(10)
+       - 5.0
+       - 2014.06.08
+       - 0.00093
+       - 0.001
+       - `7b3809b...df9db6e <https://github.com/numpy/numpy/compare/7b3809b...df9db6e>`__
+     * - :ref:`numpy.add.reduce_axis=0__complex64`
+       - ConsistentlyWorse(10)
+       - 4.9
+       - 2012.09.02
+       - 2.8
+       - 2.9
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.less_than_scalar2_numpy.float64`
+       - ConsistentlyWorse(10)
+       - 4.7
+       - 2014.06.30
+       - 0.011
+       - 0.012
+       - `caeb888...002b0de <https://github.com/numpy/numpy/compare/caeb888...002b0de>`__
+     * - :ref:`a_indexes_rand__`
+       - ConsistentlyWorse(10)
+       - 4.6
+       - 2014.07.20
+       - 0.25
+       - 0.26
+       - `c7ad14f...fe0f6cc <https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc>`__
+     * - :ref:`median_even_inplace`
+       - ConsistentlyWorse(10)
+       - 4.6
+       - 2014.10.16
+       - 0.051
+       - 0.052
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.add_scalar_conv_complex`
+       - ConsistentlyWorse(10)
+       - 4.5
+       - 2014.11.19
+       - 0.0013
+       - 0.0015
+       - `c7ad14f...fe0f6cc <https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc>`__
+     * - :ref:`numpy.ma.masked_array_l100_`
+       - ConsistentlyWorse(10)
+       - 4.5
+       - 2014.05.26
+       - 1.1
+       - 1.2
+       - `23f20aa...68ffaec <https://github.com/numpy/numpy/compare/23f20aa...68ffaec>`__
+     * - :ref:`numpy.add_scalar_conv`
+       - ConsistentlyWorse(10)
+       - 4.2
+       - 2014.10.24
+       - 0.0012
+       - 0.0014
+       - `fa14ae0...58350f4 <https://github.com/numpy/numpy/compare/fa14ae0...58350f4>`__
+     * - :ref:`numpy.signbit_a__7types`
+       - ConsistentlyWorse(10)
+       - 4.2
+       - 2014.05.26
+       - 0.32
+       - 0.33
+       - `1e72312...860489c <https://github.com/numpy/numpy/compare/1e72312...860489c>`__
+     * - :ref:`numpy.linalg.det_a__int64`
+       - ConsistentlyWorse(10)
+       - 3.7
+       - 2014.06.02
+       - 0.09
+       - 0.093
+       - `e73ee5d...eb61066 <https://github.com/numpy/numpy/compare/e73ee5d...eb61066>`__
+     * - :ref:`numpy.linalg.det_a__int16`
+       - ConsistentlyWorse(10)
+       - 3.5
+       - 2014.07.04
+       - 0.085
+       - 0.087
+       - `c7ad14f...fe0f6cc <https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc>`__
+     * - :ref:`numpy.linalg.norm_a__int32`
+       - ConsistentlyWorse(10)
+       - 3.4
+       - 2014.10.21
+       - 0.027
+       - 0.027
+       - `1246dbc...8dd530b <https://github.com/numpy/numpy/compare/1246dbc...8dd530b>`__
+     * - :ref:`numpy.zeros_100_`
+       - ConsistentlyWorse(10)
+       - 3.3
+       - 2014.06.08
+       - 0.00096
+       - 0.001
+       - `fa14ae0...58350f4 <https://github.com/numpy/numpy/compare/fa14ae0...58350f4>`__
+     * - :ref:`numpy.power_a_a__10types`
+       - ConsistentlyWorse(10)
+       - 3.2
+       - 2011.05.07
+       - 3.4
+       - 3.5
+       - `e73ee5d...eb61066 <https://github.com/numpy/numpy/compare/e73ee5d...eb61066>`__
+     * - :ref:`numpy.add.reduce_axis=0__complex256`
+       - ConsistentlyWorse(10)
+       - 2.8
+       - 2013.04.03
+       - 12
+       - 13
+       - `fe7816d...fb40fe8 <https://github.com/numpy/numpy/compare/fe7816d...fb40fe8>`__
+     * - :ref:`numpy.add.reduce_axis=1_`
+       - ConsistentlyWorse(10)
+       - 2.7
+       - 2014.04.03
+       - 38
+       - 39
+       - `975267d...25aff4d <https://github.com/numpy/numpy/compare/975267d...25aff4d>`__
+     * - :ref:`strided_copy_complex128`
+       - ConsistentlyWorse(10)
+       - 2.6
+       - 2014.06.02
+       - 0.1
+       - 0.11
+       - `c2d7845...9bfd76e <https://github.com/numpy/numpy/compare/c2d7845...9bfd76e>`__
+     * - :ref:`numpy.linalg.norm_a__float64`
+       - ConsistentlyWorse(10)
+       - 2.5
+       - 2014.10.21
+       - 0.034
+       - 0.034
+       - `c7ad14f...fe0f6cc <https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc>`__
+     * - :ref:`numpy.diagflat_l100_`
+       - ConsistentlyWorse(10)
+       - 2.2
+       - 2014.06.30
+       - 0.029
+       - 0.03
+       - `975267d...25aff4d <https://github.com/numpy/numpy/compare/975267d...25aff4d>`__
+     * - :ref:`numpy.linalg.norm_a__complex64`
+       - ConsistentlyWorse(10)
+       - 2.1
+       - 2014.10.21
+       - 0.051
+       - 0.052
+       - `c7ad14f...fe0f6cc <https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc>`__
+     * - :ref:`a___indexes__=1`
+       - ConsistentlyWorse(10)
+       - 2.1
+       - 2014.06.02
+       - 0.4
+       - 0.41
+       - `fe7816d...fb40fe8 <https://github.com/numpy/numpy/compare/fe7816d...fb40fe8>`__
+     * - :ref:`a___indexes__`
+       - ConsistentlyWorse(10)
+       - 2.1
+       - 2014.10.21
+       - 0.46
+       - 0.47
+       - `fb037eb...31b94e8 <https://github.com/numpy/numpy/compare/fb037eb...31b94e8>`__
+     * - :ref:`numpy.diagflat__l50__l50__`
+       - ConsistentlyWorse(10)
+       - 2.1
+       - 2014.07.03
+       - 0.03
+       - 0.031
+       - `975267d...25aff4d <https://github.com/numpy/numpy/compare/975267d...25aff4d>`__
+     * - :ref:`a_indexes__=1`
+       - ConsistentlyWorse(10)
+       - 2.0
+       - 2014.06.08
+       - 0.28
+       - 0.28
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.floor_a__7types`
+       - ConsistentlyWorse(10)
+       - 2.0
+       - 2014.03.30
+       - 0.84
+       - 0.86
+       - `8cdc5f5...73d87a7 <https://github.com/numpy/numpy/compare/8cdc5f5...73d87a7>`__
+     * - :ref:`numpy.sin_a__10types`
+       - ConsistentlyWorse(10)
+       - 1.9
+       - 2014.10.26
+       - 7
+       - 7.1
+       - `060aed9...c7ad14f <https://github.com/numpy/numpy/compare/060aed9...c7ad14f>`__
+     * - :ref:`a___indexes_rand__=1`
+       - ConsistentlyWorse(10)
+       - 1.9
+       - 2014.06.02
+       - 0.46
+       - 0.47
+       - `fe7816d...fb40fe8 <https://github.com/numpy/numpy/compare/fe7816d...fb40fe8>`__
+     * - :ref:`numpy.linalg.norm_a__float32`
+       - ConsistentlyWorse(10)
+       - 1.9
+       - 2014.10.11
+       - 0.029
+       - 0.03
+       - `c7ad14f...fe0f6cc <https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc>`__
+     * - :ref:`numpy.rint_a__10types`
+       - ConsistentlyWorse(10)
+       - 1.9
+       - 2014.10.17
+       - 1.3
+       - 1.4
+       - `49b0628...db710ce <https://github.com/numpy/numpy/compare/49b0628...db710ce>`__
+     * - :ref:`numpy.add_scalar2_numpy.float32`
+       - ConsistentlyWorse(10)
+       - 1.8
+       - 2014.07.06
+       - 0.011
+       - 0.013
+       - `4d94317...927cfcf <https://github.com/numpy/numpy/compare/4d94317...927cfcf>`__
+     * - :ref:`numpy.isnan_a__10types`
+       - ConsistentlyWorse(10)
+       - 1.8
+       - 2014.10.19
+       - 0.41
+       - 0.42
+       - `6457686...8e113c9 <https://github.com/numpy/numpy/compare/6457686...8e113c9>`__
+     * - :ref:`numpy.frexp_a__7types`
+       - ConsistentlyWorse(10)
+       - 1.8
+       - 2014.06.02
+       - 0.9
+       - 0.93
+       - `256d256...23ee379 <https://github.com/numpy/numpy/compare/256d256...23ee379>`__
+     * - :ref:`numpy.random.weibull_1__size=_100_100__`
+       - ConsistentlyWorse(10)
+       - 1.5
+       - 2013.09.22
+       - 1.2
+       - 1.3
+       - `68ffaec...8bcb756 <https://github.com/numpy/numpy/compare/68ffaec...8bcb756>`__
+     * - :ref:`numpy.sqrt_a__10types`
+       - ConsistentlyWorse(10)
+       - 1.5
+       - 2014.07.10
+       - 2.2
+       - 2.3
+       - `424b56e...12472aa <https://github.com/numpy/numpy/compare/424b56e...12472aa>`__
+     * - :ref:`strided_copy_float32`
+       - ConsistentlyWorse(10)
+       - 1.5
+       - 2014.06.08
+       - 0.02
+       - 0.02
+       - `fb40fe8...256d256 <https://github.com/numpy/numpy/compare/fb40fe8...256d256>`__
+     * - :ref:`numpy.isfinite_a__10types`
+       - ConsistentlyWorse(10)
+       - 1.4
+       - 2014.10.19
+       - 0.47
+       - 0.48
+       - `280f605...fe7816d <https://github.com/numpy/numpy/compare/280f605...fe7816d>`__
+     * - :ref:`numpy.isinf_a__10types`
+       - ConsistentlyWorse(10)
+       - 1.3
+       - 2014.10.19
+       - 0.65
+       - 0.65
+       - `fe7816d...fb40fe8 <https://github.com/numpy/numpy/compare/fe7816d...fb40fe8>`__
+     * - :ref:`numpy.conjugate_a__10types`
+       - ConsistentlyWorse(10)
+       - 1.3
+       - 2014.10.16
+       - 0.49
+       - 0.5
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`vb_savez_squares`
+       - ConsistentlyWorse(10)
+       - 1.2
+       - 2014.07.10
+       - 4.5e+02
+       - 4.5e+02
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.conj_a__10types`
+       - ConsistentlyWorse(10)
+       - 1.2
+       - 2014.11.17
+       - 0.49
+       - 0.5
+       - `7eff5b8...d6d6795 <https://github.com/numpy/numpy/compare/7eff5b8...d6d6795>`__
+     * - :ref:`numpy.divide_scalar2_numpy.float32`
+       - ConsistentlyWorse(10)
+       - 1.2
+       - 2014.06.30
+       - 0.031
+       - 0.031
+       - `c7ad14f...fe0f6cc <https://github.com/numpy/numpy/compare/c7ad14f...fe0f6cc>`__
+     * - :ref:`numpy.divide_scalar2_inplace_numpy.float32`
+       - ConsistentlyWorse(10)
+       - 1.1
+       - 2014.06.02
+       - 0.031
+       - 0.031
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.add.reduce_axis=0_`
+       - ConsistentlyWorse(10)
+       - 0.9
+       - 2014.11.11
+       - 57
+       - 58
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.nextafter_a_a__7types`
+       - ConsistentlyWorse(10)
+       - 0.8
+       - 2014.10.16
+       - 1
+       - 1
+       - `8cdc5f5...73d87a7 <https://github.com/numpy/numpy/compare/8cdc5f5...73d87a7>`__
+     * - :ref:`numpy.true_divide_a_a__10types`
+       - ConsistentlyWorse(10)
+       - 0.7
+       - 2011.03.26
+       - 2
+       - 2.1
+       - `99329f9...4e32035 <https://github.com/numpy/numpy/compare/99329f9...4e32035>`__
+     * - :ref:`numpy.random.poisson_10_size=_100_100__`
+       - ConsistentlyWorse(10)
+       - 0.6
+       - 2014.06.02
+       - 4.3
+       - 4.3
+       - `e73ee5d...eb61066 <https://github.com/numpy/numpy/compare/e73ee5d...eb61066>`__
+     * - :ref:`numpy.log_a__10types`
+       - ConsistentlyWorse(10)
+       - 0.5
+       - 2014.06.02
+       - 5.9
+       - 5.9
+       - `53a202b...c2d7845 <https://github.com/numpy/numpy/compare/53a202b...c2d7845>`__
+     * - :ref:`numpy.divide_scalar2_inplace_numpy.float64`
+       - ConsistentlyWorse(10)
+       - 0.5
+       - 2014.06.17
+       - 0.066
+       - 0.067
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`cont_assign_float64`
+       - ConsistentlyWorse(10)
+       - 0.4
+       - 2014.07.16
+       - 0.015
+       - 0.015
+       - `8bcb756...fb037eb <https://github.com/numpy/numpy/compare/8bcb756...fb037eb>`__
+     * - :ref:`numpy.divide_scalar2_numpy.float64`
+       - ConsistentlyWorse(10)
+       - 0.4
+       - 2014.07.03
+       - 0.066
+       - 0.067
+       - `eb61066...74b0836 <https://github.com/numpy/numpy/compare/eb61066...74b0836>`__
+     * - :ref:`numpy.absolute_a__10types`
+       - ConsistentlyWorse(10)
+       - 0.3
+       - 2014.01.15
+       - 1
+       - 1.1
+       - `fb037eb...31b94e8 <https://github.com/numpy/numpy/compare/fb037eb...31b94e8>`__
+     * - :ref:`strided_copy_int8`
+       - ConsistentlyWorse(10)
+       - -0.1
+       - 2014.06.02
+       - 0.018
+       - 0.018
+       - `5a78905...1246dbc <https://github.com/numpy/numpy/compare/5a78905...1246dbc>`__

@@ -1,0 +1,22 @@
+vb_app
+======
+
+
+.. _laplace_inplace:
+
+laplace_inplace
+---------------
+.. include:: vbench/laplace_inplace.rst
+
+.. _laplace_normal:
+
+laplace_normal
+--------------
+.. include:: vbench/laplace_normal.rst
+
+.. _maxes_of_dots:
+
+maxes_of_dots
+-------------
+.. include:: vbench/maxes_of_dots.rst
+

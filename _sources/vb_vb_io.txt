@@ -1,0 +1,184 @@
+vb_io
+=====
+
+
+.. _cont_assign_complex128:
+
+cont_assign_complex128
+----------------------
+.. include:: vbench/cont_assign_complex128.rst
+
+.. _cont_assign_complex64:
+
+cont_assign_complex64
+---------------------
+.. include:: vbench/cont_assign_complex64.rst
+
+.. _cont_assign_float32:
+
+cont_assign_float32
+-------------------
+.. include:: vbench/cont_assign_float32.rst
+
+.. _cont_assign_float64:
+
+cont_assign_float64
+-------------------
+.. include:: vbench/cont_assign_float64.rst
+
+.. _cont_assign_int16:
+
+cont_assign_int16
+-----------------
+.. include:: vbench/cont_assign_int16.rst
+
+.. _cont_assign_int8:
+
+cont_assign_int8
+----------------
+.. include:: vbench/cont_assign_int8.rst
+
+.. _copyto:
+
+copyto
+------
+.. include:: vbench/copyto.rst
+
+.. _copyto_8_dense:
+
+copyto_8_dense
+--------------
+.. include:: vbench/copyto_8_dense.rst
+
+.. _copyto_8_sparse:
+
+copyto_8_sparse
+---------------
+.. include:: vbench/copyto_8_sparse.rst
+
+.. _copyto_dense:
+
+copyto_dense
+------------
+.. include:: vbench/copyto_dense.rst
+
+.. _copyto_sparse:
+
+copyto_sparse
+-------------
+.. include:: vbench/copyto_sparse.rst
+
+.. _memcpy_complex128:
+
+memcpy_complex128
+-----------------
+.. include:: vbench/memcpy_complex128.rst
+
+.. _memcpy_complex64:
+
+memcpy_complex64
+----------------
+.. include:: vbench/memcpy_complex64.rst
+
+.. _memcpy_float32:
+
+memcpy_float32
+--------------
+.. include:: vbench/memcpy_float32.rst
+
+.. _memcpy_float64:
+
+memcpy_float64
+--------------
+.. include:: vbench/memcpy_float64.rst
+
+.. _memcpy_int16:
+
+memcpy_int16
+------------
+.. include:: vbench/memcpy_int16.rst
+
+.. _memcpy_int8:
+
+memcpy_int8
+-----------
+.. include:: vbench/memcpy_int8.rst
+
+.. _strided_assign_complex128:
+
+strided_assign_complex128
+-------------------------
+.. include:: vbench/strided_assign_complex128.rst
+
+.. _strided_assign_complex64:
+
+strided_assign_complex64
+------------------------
+.. include:: vbench/strided_assign_complex64.rst
+
+.. _strided_assign_float32:
+
+strided_assign_float32
+----------------------
+.. include:: vbench/strided_assign_float32.rst
+
+.. _strided_assign_float64:
+
+strided_assign_float64
+----------------------
+.. include:: vbench/strided_assign_float64.rst
+
+.. _strided_assign_int16:
+
+strided_assign_int16
+--------------------
+.. include:: vbench/strided_assign_int16.rst
+
+.. _strided_assign_int8:
+
+strided_assign_int8
+-------------------
+.. include:: vbench/strided_assign_int8.rst
+
+.. _strided_copy_complex128:
+
+strided_copy_complex128
+-----------------------
+.. include:: vbench/strided_copy_complex128.rst
+
+.. _strided_copy_complex64:
+
+strided_copy_complex64
+----------------------
+.. include:: vbench/strided_copy_complex64.rst
+
+.. _strided_copy_float32:
+
+strided_copy_float32
+--------------------
+.. include:: vbench/strided_copy_float32.rst
+
+.. _strided_copy_float64:
+
+strided_copy_float64
+--------------------
+.. include:: vbench/strided_copy_float64.rst
+
+.. _strided_copy_int16:
+
+strided_copy_int16
+------------------
+.. include:: vbench/strided_copy_int16.rst
+
+.. _strided_copy_int8:
+
+strided_copy_int8
+-----------------
+.. include:: vbench/strided_copy_int8.rst
+
+.. _vb_savez_squares:
+
+vb_savez_squares
+----------------
+.. include:: vbench/vb_savez_squares.rst
+

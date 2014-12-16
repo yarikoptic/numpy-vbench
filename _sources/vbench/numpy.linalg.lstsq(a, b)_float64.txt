@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    a=squares_['float64']; b=indexes_rand[:100].astype(numpy.float64)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.linalg.lstsq(a, b)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.linalg.lstsq_a__b__float64.png
+   :width: 6in

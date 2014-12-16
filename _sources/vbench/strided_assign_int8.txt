@@ -1,0 +1,23 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    from tempfile import TemporaryFile
+    
+    d = numpy.arange(50*500, dtype=numpy.int8).reshape((500,50))
+    e = numpy.arange(50*500, dtype=numpy.int8).reshape((50,500))
+    e_d = e.reshape(d.shape)
+    dflat = numpy.arange(50*500, dtype=numpy.int8)
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    dflat[::2] = 2
+
+**Performance graph**
+
+.. image:: vbench/figures/strided_assign_int8.png
+   :width: 6in

@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.zeros(100)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.zeros_100_.png
+   :width: 6in

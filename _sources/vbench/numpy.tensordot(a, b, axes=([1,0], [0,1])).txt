@@ -1,0 +1,19 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    a = numpy.arange(480000.).reshape(60, 80, 100)
+    b = numpy.arange(192000.).reshape(80, 60, 40)
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.tensordot(a, b, axes=([1,0], [0,1]))
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.tensordot_a__b__axes=__1_0____0_1___.png
+   :width: 6in

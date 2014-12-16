@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    types=['float16', 'int32', 'int16', 'longfloat', 'float64', 'int64', 'float32']
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    [numpy.ceil(a) for t, a in squares_.iteritems() if t in types]
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.ceil_a__7types.png
+   :width: 6in

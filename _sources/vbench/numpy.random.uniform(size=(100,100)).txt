@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    import numpy
+    
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.random.uniform(size=(100,100))
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.random.uniform_size=_100_100__.png
+   :width: 6in

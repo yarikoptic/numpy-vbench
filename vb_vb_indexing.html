@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>vb_indexing &mdash; Vbench performance benchmarks for NumPy</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.6.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Vbench performance benchmarks for NumPy" href="index.html" />
+    <link rel="next" title="vb_io" href="vb_vb_io.html" />
+    <link rel="prev" title="vb_function_base" href="vb_vb_function_base.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <h1><a href="index.html">Vbench performance benchmarks for NumPy</a></h1>
+        <div class="rel">
+          <a href="vb_vb_function_base.html" title="vb_function_base"
+             accesskey="P">previous</a> |
+          <a href="vb_vb_io.html" title="vb_io"
+             accesskey="N">next</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_app.html">vb_app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_core.html">vb_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_function_base.html">vb_function_base</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">vb_indexing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-indexes">a[:,indexes_]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-indexes-1">a[:,indexes_]=1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-indexes-rand">a[:,indexes_rand_]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-indexes-rand-1">a[:,indexes_rand_]=1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">a[indexes_]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">a[indexes_]=1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">a[indexes_rand_]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">a[indexes_rand_]=1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-np-ix-indexes-indexes">a[np.ix_(indexes_, indexes_)]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-np-ix-indexes-indexes-1">a[np.ix_(indexes_, indexes_)]=1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-np-ix-indexes-rand-indexes-rand">a[np.ix_(indexes_rand_, indexes_rand_)]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-np-ix-indexes-rand-indexes-rand-1">a[np.ix_(indexes_rand_, indexes_rand_)]=1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mmap-fancy-indexing">mmap_fancy_indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mmap-slicing">mmap_slicing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_io.html">vb_io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_linalg.html">vb_linalg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_random.html">vb_random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_reduce.html">vb_reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vb_vb_ufunc.html">vb_ufunc</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" size="18" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+		  <p>
+		  <p>
+			<script type="text/javascript" src="http://www.ohloh.net/p/482908/widgets/project_partner_badge.js"></script>
+	      </p>
+        </div>
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="vb-indexing">
+<h1>vb_indexing<a class="headerlink" href="#vb-indexing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-indexes">
+<span id="id1"></span><h2>a[:,indexes_]<a class="headerlink" href="#a-indexes" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[:,</span><span class="n">indexes_</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a___indexes__.png" src="_images/a___indexes__.png" style="width: 6in;" />
+</div>
+<div class="section" id="a-indexes-1">
+<span id="id2"></span><h2>a[:,indexes_]=1<a class="headerlink" href="#a-indexes-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[:,</span><span class="n">indexes_</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a___indexes__=1.png" src="_images/a___indexes__=1.png" style="width: 6in;" />
+</div>
+<div class="section" id="a-indexes-rand">
+<span id="id3"></span><h2>a[:,indexes_rand_]<a class="headerlink" href="#a-indexes-rand" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[:,</span><span class="n">indexes_rand_</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a___indexes_rand__.png" src="_images/a___indexes_rand__.png" style="width: 6in;" />
+</div>
+<div class="section" id="a-indexes-rand-1">
+<span id="id4"></span><h2>a[:,indexes_rand_]=1<a class="headerlink" href="#a-indexes-rand-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[:,</span><span class="n">indexes_rand_</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a___indexes_rand__=1.png" src="_images/a___indexes_rand__=1.png" style="width: 6in;" />
+</div>
+<div class="section" id="id5">
+<span id="id6"></span><h2>a[<a href="#id19"><span class="problematic" id="id20">indexes_</span></a>]<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[</span><span class="n">indexes_</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a_indexes__.png" src="_images/a_indexes__.png" style="width: 6in;" />
+</div>
+<div class="section" id="id7">
+<span id="id8"></span><h2>a[<a href="#id21"><span class="problematic" id="id22">indexes_</span></a>]=1<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[</span><span class="n">indexes_</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a_indexes__=1.png" src="_images/a_indexes__=1.png" style="width: 6in;" />
+</div>
+<div class="section" id="id9">
+<span id="id10"></span><h2>a[<a href="#id23"><span class="problematic" id="id24">indexes_rand_</span></a>]<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[</span><span class="n">indexes_rand_</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a_indexes_rand__.png" src="_images/a_indexes_rand__.png" style="width: 6in;" />
+</div>
+<div class="section" id="id11">
+<span id="id12"></span><h2>a[<a href="#id25"><span class="problematic" id="id26">indexes_rand_</span></a>]=1<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[</span><span class="n">indexes_rand_</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a_indexes_rand__=1.png" src="_images/a_indexes_rand__=1.png" style="width: 6in;" />
+</div>
+<div class="section" id="a-np-ix-indexes-indexes">
+<span id="id13"></span><h2>a[np.ix_(<a href="#id27"><span class="problematic" id="id28">indexes_</span></a>, <a href="#id29"><span class="problematic" id="id30">indexes_</span></a>)]<a class="headerlink" href="#a-np-ix-indexes-indexes" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">(</span><span class="n">indexes_</span><span class="p">,</span> <span class="n">indexes_</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a_np.ix__indexes___indexes___.png" src="_images/a_np.ix__indexes___indexes___.png" style="width: 6in;" />
+</div>
+<div class="section" id="a-np-ix-indexes-indexes-1">
+<span id="id14"></span><h2>a[np.ix_(<a href="#id31"><span class="problematic" id="id32">indexes_</span></a>, <a href="#id33"><span class="problematic" id="id34">indexes_</span></a>)]=1<a class="headerlink" href="#a-np-ix-indexes-indexes-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">(</span><span class="n">indexes_</span><span class="p">,</span> <span class="n">indexes_</span><span class="p">)]</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a_np.ix__indexes___indexes___=1.png" src="_images/a_np.ix__indexes___indexes___=1.png" style="width: 6in;" />
+</div>
+<div class="section" id="a-np-ix-indexes-rand-indexes-rand">
+<span id="id15"></span><h2>a[np.ix_(<a href="#id35"><span class="problematic" id="id36">indexes_rand_</span></a>, <a href="#id37"><span class="problematic" id="id38">indexes_rand_</span></a>)]<a class="headerlink" href="#a-np-ix-indexes-rand-indexes-rand" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">(</span><span class="n">indexes_rand_</span><span class="p">,</span> <span class="n">indexes_rand_</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a_np.ix__indexes_rand___indexes_rand___.png" src="_images/a_np.ix__indexes_rand___indexes_rand___.png" style="width: 6in;" />
+</div>
+<div class="section" id="a-np-ix-indexes-rand-indexes-rand-1">
+<span id="id16"></span><h2>a[np.ix_(<a href="#id39"><span class="problematic" id="id40">indexes_rand_</span></a>, <a href="#id41"><span class="problematic" id="id42">indexes_rand_</span></a>)]=1<a class="headerlink" href="#a-np-ix-indexes-rand-indexes-rand-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">numpy_vb_common</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">squares_</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span> <span class="n">a</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">(</span><span class="n">indexes_rand_</span><span class="p">,</span> <span class="n">indexes_rand_</span><span class="p">)]</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/a_np.ix__indexes_rand___indexes_rand___=1.png" src="_images/a_np.ix__indexes_rand___indexes_rand___=1.png" style="width: 6in;" />
+</div>
+<div class="section" id="mmap-fancy-indexing">
+<span id="id17"></span><h2>mmap_fancy_indexing<a class="headerlink" href="#mmap-fancy-indexing" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">memmap</span><span class="p">,</span> <span class="n">float32</span><span class="p">,</span> <span class="n">array</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">memmap</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;w+&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">))</span>
+<span class="n">indexes</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+     <span class="n">fp</span><span class="p">[</span><span class="n">indexes</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/mmap_fancy_indexing.png" src="_images/mmap_fancy_indexing.png" style="width: 6in;" />
+</div>
+<div class="section" id="mmap-slicing">
+<span id="id18"></span><h2>mmap_slicing<a class="headerlink" href="#mmap-slicing" title="Permalink to this headline">¶</a></h2>
+<p><strong>Benchmark setup</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">memmap</span><span class="p">,</span> <span class="n">float32</span><span class="p">,</span> <span class="n">array</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="n">memmap</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">&#39;w+&#39;</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">60</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Benchmark statement</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+     <span class="n">fp</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Performance graph</strong></p>
+<img alt="_images/mmap_slicing.png" src="_images/mmap_slicing.png" style="width: 6in;" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="vb_vb_function_base.html" title="vb_function_base"
+             >previous</a> |
+          <a href="vb_vb_io.html" title="vb_io"
+             >next</a> |
+          <a href="genindex.html" title="General Index"
+             >index</a>
+            <br/>
+            <a href="_sources/vb_vb_indexing.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2013, the NumPy development team.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

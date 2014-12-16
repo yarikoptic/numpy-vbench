@@ -1,0 +1,17 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    from numpy_vb_common import *
+    d = numpy.ones(20000, dtype=numpy.float32)
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    numpy.divide(d, 1, out=d)
+
+**Performance graph**
+
+.. image:: vbench/figures/numpy.divide_scalar2_inplace_numpy.float32.png
+   :width: 6in

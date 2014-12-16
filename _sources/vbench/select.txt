@@ -1,0 +1,16 @@
+**Benchmark setup**
+
+.. code-block:: python
+
+    d = np.arange(20000); e = d.copy();cond = [d > 4, d < 2]
+
+**Benchmark statement**
+
+.. code-block:: python
+
+    np.select(cond, [d, e])
+
+**Performance graph**
+
+.. image:: vbench/figures/select.png
+   :width: 6in
